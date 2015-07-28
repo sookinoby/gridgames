@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-angular.module('gridGame1', ['gridGame1Grid', 'gridGame1Keyboard', 'ngCookies','gridGame1Data'])
+angular.module('arrowGameLogic', ['gridGame1Grid', 'gridGame1Keyboard', 'ngCookies','gridGame1Data'])
 .service('GridGame1Manager', function($q, $timeout, GridGame1Service, $cookieStore,$log) {
 
   this.getHighScore = function() {

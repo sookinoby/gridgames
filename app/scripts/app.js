@@ -23,7 +23,7 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-         templateUrl: 'game/game1/views/main.html'
+         templateUrl: 'game/game3/views/main.html'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
