@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'gridGame3App',
-    'gridGame1App' //,'gridGame3App'
+    'arrowGame' //,'gridGame3App'
     
   ])
   .config(function ($routeProvider) {
@@ -33,14 +33,7 @@ angular
         templateUrl: 'game/game3/views/main.html',
       })
       .when('/game/:type', {
-        templateUrl: 'game/game1/views/main.html',
-      })
-      .when('/game/:type', {
-        templateUrl: 'game/game1/views/main.html',
-      })
-      
-       .when('/game/:type', {
-        templateUrl: 'game/game1/views/main.html',
+        templateUrl: 'game/arrowgame/views/main.html',
       })
       .when('/login', {
         templateUrl: 'views/login.html',
