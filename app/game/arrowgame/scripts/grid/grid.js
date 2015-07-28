@@ -2,19 +2,6 @@
 'use strict';
 
 angular.module('gridGame1Grid', [])
-.factory('GridGameGenerateUniqueId', function() {
-  // http://stackoverflow.com/questions/12223529/create-globally-unique-id-in-javascript
-  var generateUid = function (separator) {
-    var delim = separator || '-';
-    function S4() {
-      return (((1 + Math.random()) * 0x10000) || 0).toString(16).substring(1);
-    }
-    return (S4() + S4() + delim + S4() + delim + S4() + delim + S4() + delim + S4() + S4() + S4());
-  };
-  return {
-    next: function() { return generateUid(); }
-  };
-})
 .factory('GridGame1TileModel', function(GridGameGenerateUniqueId) {
   var Tile = function(pos, val,answer,question) {
     this.x      = pos.x;
@@ -22,7 +9,6 @@ angular.module('gridGame1Grid', [])
     this.value  = val;
     this.answer = answer;
     this.question = question;
-    this.id = GridGameGenerateUniqueId.next();
     this.merged = null;
     this.changeColor = false;
     this.selected = false;
@@ -149,7 +135,10 @@ angular.module('gridGame1Grid', [])
     
     };
       
-    // Build game board
+     /*
+     * builds empty game board
+     * 
+     */
     this.buildEmptyGameBoard = function() {
       var self = this;
       // Initialize our grid
@@ -162,17 +151,10 @@ angular.module('gridGame1Grid', [])
       });
     };
 
-    /*
-     * Prepare for traversal
-    
-    this.prepareTiles = function() {
-      this.forEach(function(x,y,tile) {
-        if (tile) {
-          tile.savePosition();
-          tile.reset();
-        }
-      });
-    }; */
+     /*
+     * cleans the cell
+     * 
+     */
 
     this.cleanupCells = function() {
       var self = this;
@@ -182,76 +164,37 @@ angular.module('gridGame1Grid', [])
         }
       });
     };
-      
+     /*
+     *  sets the answer tile
+     * 
+     */
     this.setAnswerTile = function(tile) {
       this.correctAnswerTile.push(tile);    
     }
-    
+     /*
+     * returns the answer tile 
+     * 
+     */
     this.getAnswerTile = function() {
         return this.correctAnswerTile;
     }
-    
+     /*
+     * Resets answer tile during new round of question
+     * 
+     */
     this.resetAnswerTile = function(tile) {
         this.correctAnswerTile = null;
     }
 
     /*
-     * Due to the fact we calculate the next positions
-     * in order, we need to specify the order in which
-     * we calculate the next positions
-    
-    this.traversalDirections = function(key) {
-      var vector = vectors[key];
-      var positions = {x: [], y: []};
-      for (var x = 0; x < this.size; x++) {
-        positions.x.push(x);
-        positions.y.push(x);
-      }
-
-      if (vector.x > 0) {
-        positions.x = positions.x.reverse();
-      }
-      if (vector.y > 0) {
-        positions.y = positions.y.reverse();
-      }
-
-      return positions;
-    }; */
-
-
-    /*
-     * Calculate the next position for a tile
-    
-    this.calculateNextPosition = function(cell, key) {
-      var vector = vectors[key];
-      var previous;
-
-      do {
-        previous = cell;
-        cell = {
-          x: previous.x + vector.x,
-          y: previous.y + vector.y
-        };
-      } while (this.withinGrid(cell) && this.cellAvailable(cell));
-
-      return {
-        newPosition: previous,
-        next: this.getCellAt(cell)
-      };
-    }; */
-
+     * Checks if given cell is with the grid
+     * with randomly placed tiles
+     */
     this.withinGrid = function(cell) {
       return cell.x >= 0 && cell.x < this.size &&
               cell.y >= 0 && cell.y < this.size;
     };
 
-/*    this.cellAvailable = function(cell) {
-      if (this.withinGrid(cell)) {
-        return !this.getCellAt(cell);
-      } else {
-        return null;
-      }
-    };*/
 
     /*
      * Build the initial starting position
@@ -259,8 +202,12 @@ angular.module('gridGame1Grid', [])
      */
     this._getRandom = function(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;    
-    }; 
-      
+    };
+
+    /*
+     * Build the answer plus remaining optionsArray
+     * 
+     */  
      this.getOptions = function(answer,optionsArrayList) {
        var makeOption = [];
         for(var x=0; x < answer.length; x++)
@@ -268,7 +215,6 @@ angular.module('gridGame1Grid', [])
             makeOption.push(answer[x]);
            
         }
-       
        for(var x=0; x < 4 - answer.length; x++)
        {
             var ran = this._getRandom(0,(optionsArrayList.length-1));
@@ -278,7 +224,10 @@ angular.module('gridGame1Grid', [])
        }
        return makeOption; 
      };
-      
+     
+     /* 
+     * reset the fact content to initial position
+     */ 
     this.resetFactContent = function(){
      this.linenumber = 0;
      this.factContent = [
@@ -313,12 +262,15 @@ angular.module('gridGame1Grid', [])
 
       }
       
-  ];    
+        ];    
         
     }
+
     
-    this.buildStartingPosition = function(placeToInsert) {
-      
+    /* 
+     *function to build the starting position of game
+     */
+    this.buildStartingPosition = function(placeToInsert) {  
     var sname = this.nameOfStrategy;
     var statergy_to_select = null;
     if(sname != null)
@@ -336,8 +288,7 @@ angular.module('gridGame1Grid', [])
     else {
        statergy_to_select = this.gameData[0];  
     }
-        //  console.log(statergy_to_select);
-        
+    //  console.log(statergy_to_select);
     var ran = this._getRandom(0,statergy_to_select.questions.length-1);
     // hold the question    
     var q = statergy_to_select.questions[ran].q;
@@ -351,11 +302,8 @@ angular.module('gridGame1Grid', [])
    var answersAndOptions = this.getOptions(a.slice(),optionsArrayList.slice());
         // console.log(makeOption);
     // inserts the question at random place    
-    var tile =   this.randomlyInsertNewQuestionTile(q,placeToInsert);
-        
-        
+    var tile =   this.randomlyInsertNewQuestionTile(q,placeToInsert);   
     this.points_for_questions = 0;    
-   
    // this.factContent = q + a;
     var neighbhourCellsAvailable = this.findRelativeAvailableCells(tile);
    
@@ -365,9 +313,11 @@ angular.module('gridGame1Grid', [])
    // console.log(neighbhourCellsAvailable);
     return neighbhourCellsAvailable[0];
     };
-      
+
+      /*
+      * deletes the current board   
+      */   
     this.deleteCurrentBoard = function() {
-   
     if( this.currentAnswersCells != undefined && this.currentQuestionCells != null)
     {
     this.showSubmitButton.truthValue = false;
@@ -384,7 +334,7 @@ angular.module('gridGame1Grid', [])
         this.resetAnswerTile();
     }
     };
-
+  
     /*
      * Get all the available tiles
      */
@@ -402,30 +352,7 @@ angular.module('gridGame1Grid', [])
       return cells;
     };
 
-    /*
-     * Check to see if there are any matches available
-     
-    this.tileMatchesAvailable = function() {
-      var totalSize = service.size * service.size;
-      for (var i = 0; i < totalSize; i++) {
-        var pos = this._positionToCoordinates(i);
-        var tile = this.tiles[i];
-
-        if (tile) {
-          // Check all vectors
-          for (var vectorName in vectors) {
-            var vector = vectors[vectorName];
-            var cell = { x: pos.x + vector.x, y: pos.y + vector.y };
-            var other = this.getCellAt(cell);
-            if (other && other.value === tile.value) {
-              return true;
-            }
-          }
-        }
-      }
-      return false;
-    };*/
-
+    
     /*
      * Get a cell at a position
      */
@@ -448,23 +375,6 @@ angular.module('gridGame1Grid', [])
       }
     };
 
-      /*
-    this.moveTile = function(tile, newPosition) {
-      var oldPos = {
-        x: tile.x,
-        y: tile.y
-      };
-
-      this.setCellAt(oldPos, null);
-      this.setCellAt(newPosition, tile);
-       
-      tile.updatePosition(newPosition);
-    }; */
-
-    /*
-     * Run a callback for every cell
-     * either on the grid or tiles
-     */
     this.forEach = function(cb) {
       var totalSize = service.size * service.size;
       for (var i = 0; i < totalSize; i++) {
@@ -513,13 +423,7 @@ angular.module('gridGame1Grid', [])
      // delete this.tiles[pos];
     };
 
-    /*
-     * Same position
-    =
-    this.samePositions = function(a, b) {
-      return a.x === b.x && a.y === b.y;
-    }; */
-
+    
     /*
      * Randomly insert a new tile
      */
@@ -556,8 +460,8 @@ angular.module('gridGame1Grid', [])
       
       
       
-     this.findRelativeAvailableCells = function(tile) {
-      var x = tile.x;
+    this.findRelativeAvailableCells = function(tile) {
+    var x = tile.x;
 	  var y = tile.y;
 	  var avaiableNeighbhourCells = []
 	  if( x +1 < service.size)
@@ -580,12 +484,8 @@ angular.module('gridGame1Grid', [])
      
     };    
       
-   
-      
-  
-     this.insertTileAtAdjacentPosition = function(avaiableNeighbhourCells,answerAndOptions,no_of_answers) {
-     avaiableNeighbhourCells = this.shuffle(avaiableNeighbhourCells);
-       
+    this.insertTileAtAdjacentPosition = function(avaiableNeighbhourCells,answerAndOptions,no_of_answers) {
+      avaiableNeighbhourCells = this.shuffle(avaiableNeighbhourCells);
       for (var x = 0; x < avaiableNeighbhourCells.length; x++) {
         var cell =  avaiableNeighbhourCells[x];
         var tile; 
@@ -725,43 +625,7 @@ angular.module('gridGame1Grid', [])
           
             return true;
     }
-      
-  /*    this.checkIfAnswerIsValid = function(key) {
-      var vector = vectors[key];
-      var tile = this.currentQuestionCells;
-      var ques_x = tile.x;
-      var ques_y = tile.y;
-      var cal_x = tile.x + vector.x;
-      var cal_y = tile.y + vector.y;
-      var guessed_answer = this.getCellAt({x:cal_x,y:cal_y}); 
-       if(guessed_answer == null)
-       {
-              return false;
-       }
-    //  console.log(guessed_answer)
-      var result = guessed_answer.answer;
-      if(result == false)
-      {
-          guessed_answer.setChangeColor();
-          var right_answer = this.getAnswerTile();
-          right_answer.setChangeColor();
-                         
-      }
-      else if(result)
-      {
-          guessed_answer.setChangeColor();
-      }      
-          
-      var positions = {x: [], y: []};
-      for (var x = 0; x < this.size; x++) {
-        positions.x.push(x);
-        positions.y.push(x);
-      }
 
-
-
-      return result;
-    }; */
       
      this.factContentColorChange = function(){
          for(var i = 0; i <4; i++)
@@ -781,8 +645,7 @@ angular.module('gridGame1Grid', [])
      }  
     
       this.checkIfKeyPressAllowed = function(key) {
-      
-      var vector = vectors[key];
+            var vector = vectors[key];
       var tile = this.currentQuestionCells;     
       var ques_x = tile.x;
       var ques_y = tile.y;
@@ -799,10 +662,9 @@ angular.module('gridGame1Grid', [])
           
       }
      
-    this.checkIfAnswerIsValid = function() {
-        
-    if(this.keysPressed.length == 0)
-    {
+    this.checkIfAnswerIsValid = function() {  
+        if(this.keysPressed.length == 0)
+        {
          var right_answers = this.getAnswerTile();
          // console.log(right_answers);   
           for (var i = 0; i < right_answers.length; i++) {
@@ -810,13 +672,10 @@ angular.module('gridGame1Grid', [])
            var right_answer = right_answers[i];
            right_answer.setChangeColor();
           }
-    }
+        }
         
       for (var i = 0; i < this.keysPressed.length; i++) {
-     
-     
       var vector = vectors[this.keysPressed[i]];
-    
       var tile = this.currentQuestionCells;
       var ques_x = tile.x;
       var ques_y = tile.y;
@@ -831,17 +690,13 @@ angular.module('gridGame1Grid', [])
        }
       var result = guessed_answer.answer;
       if(result == false)
-      {
-         
-         
+      {  
           guessed_answer.setChangeColor();
           var right_answers = this.getAnswerTile();
           for (var j = 0; j < right_answers.length; j++) {
            var right_answer = right_answers[j];
            right_answer.setChangeColor();
-          }
-       
-                     
+          }              
       }
       else if(result)
       {
@@ -887,9 +742,6 @@ angular.module('gridGame1Grid', [])
     this.anyCellsAvailable = function() {
       return this.availableCells().length > 0;
     };
-      
-
-
     return this;
   };
 });
