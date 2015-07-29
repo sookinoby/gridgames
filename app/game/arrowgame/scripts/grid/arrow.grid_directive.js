@@ -1,7 +1,7 @@
 (function() {
 'use strict';
 
-angular.module('gridGame1Grid')
+angular.module('arrowGameGrid')
 .directive('grid1', function() {
   return {
     restrict: 'A',

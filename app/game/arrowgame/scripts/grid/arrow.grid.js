@@ -1,7 +1,6 @@
 (function() {
 'use strict';
-
-angular.module('gridGame1Grid', [])
+angular.module('arrowGameGrid', [])
 .factory('GridGame1TileModel', function() {
   var Tile = function(pos, val,answer,question) {
     this.x      = pos.x;
@@ -20,8 +19,8 @@ angular.module('gridGame1Grid', [])
     this.originalX = this.x;
     this.originalY = this.y;
   };
-    
-   Tile.prototype.setChangeColor = function() {
+  
+  Tile.prototype.setChangeColor = function() {
     this.default = false;
     this.changeColor = true;
   };   
@@ -30,7 +29,6 @@ angular.module('gridGame1Grid', [])
     this.default = true;  
     this.changeColor = false;
   }; 
-    
   Tile.prototype.setSelected = function() {
     this.selected = true;
   };   
@@ -38,13 +36,10 @@ angular.module('gridGame1Grid', [])
    Tile.prototype.getSelected = function() {
     return this.selected;
   };   
-    
+  
   Tile.prototype.resetSelected = function() {
     this.selected = false;
   }; 
-        
-    
-
   Tile.prototype.reset = function() {
     this.merged = null;
   };
@@ -444,11 +439,10 @@ angular.module('gridGame1Grid', [])
           var tile = this.newTile(cell, question,false,true);
           this.insertTile(tile);
           return tile;
-    };
-      
-    
-      
-    /* code edited by suresh */
+    }; 
+    /* 
+     * code edited by suresh 
+     */
     this.shuffle = function(o){ //v1.0
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
       return o;
@@ -457,9 +451,7 @@ angular.module('gridGame1Grid', [])
     this.getFactContent = function() {
       return this.factContent;
     };
-      
-      
-      
+        
     this.findRelativeAvailableCells = function(tile) {
     var x = tile.x;
 	  var y = tile.y;
@@ -510,8 +502,8 @@ angular.module('gridGame1Grid', [])
 
     };
     
-      this.checkIfDuplicate = function(key)
-      {
+    this.checkIfDuplicate = function(key)
+    {
           
           if(this.keysPressed.indexOf(key) == -1)
           {
@@ -559,11 +551,8 @@ angular.module('gridGame1Grid', [])
           if(service.checkIfDuplicate(key) == -1)
               service.selectedAnswer.push(key);
       }
-      
     
-      
       this.selectTitleForProcessing = function(key,tileDetail){  
-          
           if(service.showNextButton.truthValue)
               return;
           
@@ -585,16 +574,9 @@ angular.module('gridGame1Grid', [])
            
             guessed_answer = tileDetail;
             service.getCorrespondingArrowKey(tileDetail);
-              
-              
-          
-            //var guessed_answer = this.getCellAt({x:cal_x,y:cal_y}); 
-         
            }
            else {
             var vector = vectors[key];
-           
-            
             var cal_x = tile.x + vector.x;
             var cal_y = tile.y + vector.y;
             guessed_answer = service.getCellAt({x:cal_x,y:cal_y}); 
@@ -604,25 +586,19 @@ angular.module('gridGame1Grid', [])
               return false;
             
             }
-            
-           
            if(guessed_answer.getSelected())
                  return false;
             if(guessed_answer.value == service.currentQuestionCells.value)
                  return false;
-
             guessed_answer.setSelected();
             service.showSubmitButton.truthValue = true;
-          
             if(this.linenumber > 3)
                 return false
-          
             service.factContent[service.linenumber].fact = tile.value + guessed_answer.value ;
             service.factContent[service.linenumber].select = true;
             service.factContent[service.linenumber].isAnswer = guessed_answer.answer;
           //  console.log(this.factContent);
             service.linenumber++;
-          
             return true;
     }
 
