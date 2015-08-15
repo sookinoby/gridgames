@@ -20,7 +20,8 @@ angular
     'arrowGame' //,'gridGame3App'
     
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$logProvider) {
+    $logProvider.debugEnabled(true)
     $routeProvider
       .when('/', {
          templateUrl: 'game/game3/views/main.html'
