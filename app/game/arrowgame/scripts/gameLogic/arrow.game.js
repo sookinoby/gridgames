@@ -2,7 +2,6 @@
     'use strict';
     angular.module('arrowGameLogic', ['arrowGameGrid', 'gridGame1Data']).service('GridGame1Manager', function($q, $timeout, GridGame1Service, $log) {
         this.delay = 5000;
-        // console.log(promise);
         this.positionToInsert = {};
         this.grid = GridGame1Service.grid;
         this.tiles = GridGame1Service.tiles;
@@ -84,7 +83,7 @@
             GridGame1Service.buildEmptyGameBoard();
             $timeout(function() {
                 self.positionToInsert = GridGame1Service.buildStartingPosition();
-                console.log('update with timeout fired');
+                $log.debug('update with timeout fired');
             }, self.delay);
             this.netural = true;
             this.showSubmitButton.truthValue = false;

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('arrowGameGrid', []).factory('GridGame1TileModel', function($log) {
-        var Tile = function(pos, val, answer, question) {
+        var Tile = function Tile(pos, val, answer, question) {
             this.x = pos.x;
             this.y = pos.y;
             this.value = val;
@@ -13,19 +13,19 @@
             this.
             default = true;
         };
-        Tile.prototype.savePosition = function() {
+        Tile.prototype.savePosition = function savePosition() {
             this.originalX = this.x;
             this.originalY = this.y;
         };
-        Tile.prototype.setChangeColor = function() {
+        Tile.prototype.setChangeColor = function setChangeColor() {
             this.
             default = false;
             this.changeColor = true;
         };
-        Tile.prototype.flip = function() {
+        Tile.prototype.flip = function flip() {
             this.selected = !this.selected;
         };
-        Tile.prototype.resetChangeColor = function() {
+        Tile.prototype.resetChangeColor = function resetChangeColor() {
             this.
             default = true;
             this.changeColor = false;
@@ -82,7 +82,6 @@
             this.tiles = [];
             this.gameData = [];
             this.nameOfStrategy = null;
-            this.keysPressed = [];
             this.storeSelectedPositions = [];
             // Private things
             var vectors = {
@@ -222,7 +221,7 @@
              * Build the answer plus remaining optionsArray
              *
              */
-            this.getOptions = function(answer, optionsArrayList) {
+            this.getOptions = function getOptions(answer, optionsArrayList) {
                 var makeOption = [];
                 for (var x = 0; x < answer.length; x++) {
                     makeOption.push(answer[x]);
@@ -230,7 +229,7 @@
                 for (var x = 0; x < 4 - answer.length; x++) {
                     var ran = this._getRandom(0, (optionsArrayList.length - 1));
                     var op = optionsArrayList.splice(ran, 1).toString();
-                    // console.log(op);
+                    $log.debug(op);
                     makeOption.push(op);
                 }
                 return makeOption;
@@ -313,7 +312,6 @@
                     this.storeSelectedPositions = [];
                     this.showSubmitButton.truthValue = false;
                     this.showNextButton.truthValue = false;
-                    this.keysPressed = [];
                     this.removeTile(this.currentQuestionCells);
                     for (var x = 0; x < this.currentAnswersCells.length; x++) {
                         this.removeTile(this.currentAnswersCells[x]);
@@ -483,24 +481,7 @@
                     this.insertTile(tile);
                 }
             };
-            this.getIndexOfKeys = function getIndexOfKeys(key) {
-                var index = this.keysPressed.indexOf(key);
-                if (index === -1) {
-                    $log.debug(getIndexOfKeys.name + this.keysPressed);
-                    this.keysPressed.push(key);
-                    return index;
-                }
-                return index;
-            }
-            this.deleteIfDuplicate = function(key) {
-                var index = this.getIndexOfKeys(key);
-                $log.debug("the index is " + index);
-                if (index !== -1) {
-                    this.keysPressed.slice(index, 1);
-                    return true;
-                }
-                return false;
-            }
+           
             this.getCorrespondingArrowKey = function(tileDetail) {
                 var UP = 'up',
                     RIGHT = 'right',
@@ -575,7 +556,6 @@
                         x: guessed_answer.x,
                         y: guessed_answer.y
                     }));
-                  
                     service.factContent[service.linenumber].fact = question_tile.value.split("+")[0] + " + " + guessed_answer.value;
                     service.factContent[service.linenumber].select = true;
                     service.factContent[service.linenumber].isAnswer = guessed_answer.answer;
@@ -589,8 +569,10 @@
                         x: guessed_answer.x,
                         y: guessed_answer.y
                     })
+                    var buildFact = question_tile.value.split("+")[0] + " + " + guessed_answer.value
                     for (var i = 0; i < service.factContent.length; i++) {
-                        if (service.factContent[i].fact == tile.value) {
+
+                        if (service.factContent[i].fact == buildFact) {
                             service.factContent[i].fact = "-";
                             service.factContent[i].select = false;
                             service.factContent[i].isAnswer = false;
@@ -684,7 +666,7 @@
                         //   alert(result);
                     }
                 }
-                console.log(points_for_questions);
+                $log.debug(points_for_questions);
                 this.factContentColorChange();
                 return points_for_questions;
             };
