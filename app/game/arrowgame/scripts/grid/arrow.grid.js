@@ -10,21 +10,24 @@
             this.merged = null;
             this.changeColor = false;
             this.selected = false;
-            this.default = true;
+            this.
+            default = true;
         };
         Tile.prototype.savePosition = function() {
             this.originalX = this.x;
             this.originalY = this.y;
         };
         Tile.prototype.setChangeColor = function() {
-            this.default = false;
+            this.
+            default = false;
             this.changeColor = true;
         };
         Tile.prototype.flip = function() {
             this.selected = !this.selected;
         };
         Tile.prototype.resetChangeColor = function() {
-            this.default = true;
+            this.
+            default = true;
             this.changeColor = false;
         };
         Tile.prototype.setSelected = function() {
@@ -80,6 +83,7 @@
             this.gameData = [];
             this.nameOfStrategy = null;
             this.keysPressed = [];
+            this.storeSelectedPositions = [];
             // Private things
             var vectors = {
                 'left': {
@@ -98,6 +102,35 @@
                     x: 0,
                     y: 1
                 }
+            };
+            /* clone the object answer */
+            this.clone = function(obj) {
+                var copy;
+                // Handle the 3 simple types, and null or undefined
+                if (null == obj || "object" != typeof obj) return obj;
+                // Handle Date
+                if (obj instanceof Date) {
+                    copy = new Date();
+                    copy.setTime(obj.getTime());
+                    return copy;
+                }
+                // Handle Array
+                if (obj instanceof Array) {
+                    copy = [];
+                    for (var i = 0, len = obj.length; i < len; i++) {
+                        copy[i] = this.clone(obj[i]);
+                    }
+                    return copy;
+                }
+                // Handle Object
+                if (obj instanceof Object) {
+                    copy = {};
+                    for (var attr in obj) {
+                        if (obj.hasOwnProperty(attr)) copy[attr] = this.clone(obj[attr]);
+                    }
+                    return copy;
+                }
+                throw new Error("Unable to copy obj! Its type isn't supported.");
             };
             this.indexOf = function(needle) {
                 if (typeof Array.prototype.indexOf === 'function') {
@@ -277,6 +310,7 @@
              */
             this.deleteCurrentBoard = function() {
                 if (this.currentAnswersCells != undefined && this.currentQuestionCells != null) {
+                    this.storeSelectedPositions = [];
                     this.showSubmitButton.truthValue = false;
                     this.showNextButton.truthValue = false;
                     this.keysPressed = [];
@@ -461,7 +495,11 @@
             this.deleteIfDuplicate = function(key) {
                 var index = this.getIndexOfKeys(key);
                 $log.debug("the index is " + index);
-                if (index !== -1) this.keysPressed.slice(index, 1);
+                if (index !== -1) {
+                    this.keysPressed.slice(index, 1);
+                    return true;
+                }
+                return false;
             }
             this.getCorrespondingArrowKey = function(tileDetail) {
                 var UP = 'up',
@@ -492,13 +530,14 @@
                 }
                 if (service.checkIfDuplicate(key) == -1) service.selectedAnswer.push(key);
             }
-            // this function actually marks (changes the color) the a selected answer
-            this.selectTileForProcessing = function(key, tileDetail) {
+            // this function actually marks (changes the color) of  the a selected answer
+            this.storeAnswerAndSelectTileForProcessing = function(key, tileDetail) {
                 // the user has already clicked on the nexbutton
                 if (service.showNextButton.truthValue) return;
-                var tile = service.currentQuestionCells;
-                var ques_x = tile.x;
-                var ques_y = tile.y;
+                var question_tile = service.currentQuestionCells;
+                var ques_x = question_tile.x;
+                var ques_y = question_tile.y;
+                // check if the selected tile is the question tile. If so, return ;
                 if (tileDetail !== undefined) {
                     if (ques_x == tileDetail.x && ques_y == tileDetail.y) return;
                 }
@@ -510,8 +549,8 @@
                     service.getCorrespondingArrowKey(tileDetail);
                 } else {
                     var vector = vectors[key];
-                    var cal_x = tile.x + vector.x;
-                    var cal_y = tile.y + vector.y;
+                    var cal_x = ques_x + vector.x;
+                    var cal_y = ques_y + vector.y;
                     guessed_answer = service.getCellAt({
                         x: cal_x,
                         y: cal_y
@@ -520,18 +559,71 @@
                 if (guessed_answer == null) {
                     return false;
                 }
-             //   if (guessed_answer.getSelected()) return false;
+                //   if (guessed_answer.getSelected()) return false;
+                // check if the guessed answer value is the question tile. If so, return ;
                 if (guessed_answer.value == service.currentQuestionCells.value) return false;
-                guessed_answer.flip();
-                if(service.keysPressed.length == 0)
-                  service.showSubmitButton.truthValue = true;
-                if (this.linenumber > 3) return false
-                service.factContent[service.linenumber].fact = tile.value + guessed_answer.value;
-                service.factContent[service.linenumber].select = true;
-                service.factContent[service.linenumber].isAnswer = guessed_answer.answer;
-                //  console.log(this.factContent);
-                service.linenumber++;
-                return true;
+                ///             //logic to check if the selected or the guessed cell is already selected
+                var location = service._coordinatesToPosition({
+                    x: guessed_answer.x,
+                    y: guessed_answer.y
+                });
+                var index = service.storeSelectedPositions.indexOf(location);
+                if (index == -1) {
+                    if (service.linenumber == 3) return;
+                    guessed_answer.flip();
+                    service.storeSelectedPositions.push(service._coordinatesToPosition({
+                        x: guessed_answer.x,
+                        y: guessed_answer.y
+                    }));
+                  
+                    service.factContent[service.linenumber].fact = question_tile.value.split("+")[0] + " + " + guessed_answer.value;
+                    service.factContent[service.linenumber].select = true;
+                    service.factContent[service.linenumber].isAnswer = guessed_answer.answer;
+                    //  console.log(this.factContent);
+                    service.linenumber++;
+                    //   console.log(service.factContent);
+                } else {
+                    service.storeSelectedPositions.splice(index, 1);
+                    guessed_answer.flip();
+                    var tile = service.getCellAt({
+                        x: guessed_answer.x,
+                        y: guessed_answer.y
+                    })
+                    for (var i = 0; i < service.factContent.length; i++) {
+                        if (service.factContent[i].fact == tile.value) {
+                            service.factContent[i].fact = "-";
+                            service.factContent[i].select = false;
+                            service.factContent[i].isAnswer = false;
+                            service.linenumber--;
+                        }
+                    }
+                    var temp_factContent = service.clone(service.factContent);
+                    var k = 0;
+                    var length = service.factContent.length;
+                    for (var i = 0; i < service.factContent.length; i++) {
+                        //  console.log(service.factContent[i].fact)
+                        if (service.factContent[i].fact != "-") {
+                            temp_factContent[k].fact = service.factContent[i].fact;
+                            temp_factContent[k].select = service.factContent[i].select;
+                            console.log(temp_factContent[k].fact)
+                            console.log(temp_factContent[k].select)
+                            k++;
+                        }
+                    }
+                    for (var i = 0; i < k; i++) {
+                        service.factContent[i].fact = temp_factContent[i].fact;
+                        service.factContent[i].select = temp_factContent[i].select;
+                    }
+                    for (var j = k; j < length; j++) {
+                        service.factContent[j].fact = "-";
+                        service.factContent[j].select = false;
+                        service.factContent[j].isAnswer = false;
+                    }
+                    //      console.log(service.factContent);
+                    //    console.log(temp_factContent);
+                }
+                if (service.storeSelectedPositions.length !== 0) service.showSubmitButton.truthValue = true;
+                else service.showSubmitButton.truthValue = false;
             }
             this.factContentColorChange = function() {
                 for (var i = 0; i < 4; i++) {
@@ -561,51 +653,42 @@
                 }
                 return true;
             }
-            this.checkIfAnswerIsValid =  function checkIfAnswerIsValid() {
-                if (this.keysPressed.length == 0) {
-                    var right_answers = this.getAnswerTile();
-                    // console.log(right_answers);   
-                    for (var i = 0; i < right_answers.length; i++) {
-                        //console.log(right_answers);   
-                        var right_answer = right_answers[i];
-                        right_answer.setChangeColor();
-                    }
-                }
-                for (var i = 0; i < this.keysPressed.length; i++) {
-                    var vector = vectors[this.keysPressed[i]];
-                    if(checkIfAnswerIsValid)
-                      $log.debug(checkIfAnswerIsValid.name + " " + vector);
-                    var tile = this.currentQuestionCells;
-                    var ques_x = tile.x;
-                    var ques_y = tile.y;
-                    var cal_x = tile.x + vector.x;
-                    var cal_y = tile.y + vector.y;
+            this.evaluateAnswer = function evaluateAnswer() {
+                for (var i = 0; i < this.storeSelectedPositions.length; i++) {
+                    // console.log(this.storeSelectedPositions);
+                    var vector = this._positionToCoordinates(this.storeSelectedPositions[i]);
                     var guessed_answer = this.getCellAt({
-                        x: cal_x,
-                        y: cal_y
+                        x: vector.x,
+                        y: vector.y
                     });
+                    var points_for_questions = 0;
                     //  console.log(guessed_answer)
                     if (guessed_answer == null) {
                         continue;
                     }
                     var result = guessed_answer.answer;
+                    //  console.log(guessed_answer);
                     if (result == false) {
                         guessed_answer.setChangeColor();
                         var right_answers = this.getAnswerTile();
                         for (var j = 0; j < right_answers.length; j++) {
                             var right_answer = right_answers[j];
                             right_answer.setChangeColor();
+                            //  alert(result);
                         }
                     } else if (result) {
-                        this.points_for_questions = this.points_for_questions + 1;
+                        points_for_questions = points_for_questions + 1;
                         // console.log("correct answer");
-                        guessed_answer.flip();
+                        guessed_answer.resetSelected();
                         guessed_answer.setChangeColor();
+                        //   alert(result);
                     }
                 }
+                console.log(points_for_questions);
                 this.factContentColorChange();
-                return this.points_for_questions;
+                return points_for_questions;
             };
+
             this.passSubmitButton = function(submitButton) {
                 this.showSubmitButton = submitButton;
             };

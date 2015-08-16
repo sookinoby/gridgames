@@ -74,7 +74,6 @@
             this.totalfacts = 0;
             this.counter = 1;
             this.countdownfinished = false;
-            this.keypressed = [];
             this.enterKeyCount = 0;
         };
         this.reinit();
@@ -94,7 +93,6 @@
             this.reinit();
         };
         this.showNextQuestions = function() {
-            this.keypressed = [];
             this.enterKeyCount = 0;
             GridGame1Service.resetFactContent();
             this.factContent = GridGame1Service.getFactContent();
@@ -105,7 +103,7 @@
             this.rightAnswer = false;
         }
         this.evaluateAnswer = function() {
-            var points_for_questions = GridGame1Service.checkIfAnswerIsValid(this.keypressed);
+            var points_for_questions = GridGame1Service.evaluateAnswer();
             if (points_for_questions != null && points_for_questions > 0) {
                 this.updateScore(this.currentScore + points_for_questions);
                 this.factContent = GridGame1Service.getFactContent();
@@ -148,7 +146,11 @@
                     return false;
                 }
                 if (key == "enter") {
-                    if (GridGame1Service.getLineNumber() == 0) return;
+                    if (GridGame1Service.getLineNumber() == 0) 
+                    {
+                      self.enterKeyCount = 0;
+                      return;
+                    }
                     self.enterKeyCount++;
                     if (self.enterKeyCount == 1) {
                         self.evaluateAnswer();
@@ -157,11 +159,10 @@
                     }
                 } else {
                     if (self.enterKeyCount == 0) {
-                        // checking for dupilcate key.
+                     
                         if (GridGame1Service.checkIfKeyPressAllowed(key)) {
                             //   self.showSubmitButton.truthValue = true;
-                            GridGame1Service.deleteIfDuplicate(key);
-                            GridGame1Service.selectTileForProcessing(key);
+                            GridGame1Service.storeAnswerAndSelectTileForProcessing(key);
                             // var result = GridGame1Service.checkIfAnswerIsValid(key);
                             self.factContent = GridGame1Service.getFactContent();
                             /*   if(result == true){
