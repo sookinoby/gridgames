@@ -482,38 +482,11 @@
                 }
             };
            
-            this.getCorrespondingArrowKey = function(tileDetail) {
-                var UP = 'up',
-                    RIGHT = 'right',
-                    DOWN = 'down',
-                    LEFT = 'left';
-                var tile = service.currentQuestionCells;
-                var ques_x = tile.x;
-                var ques_y = tile.y;
-                var cal_x = tileDetail.x;
-                var cal_y = tileDetail.y;
-                var key;
-                if (ques_x - cal_x == 1) {
-                    key = LEFT;
-                    //  console.log(LEFT);
-                }
-                if (ques_x - cal_x == -1) {
-                    key = RIGHT;
-                    //  console.log(RIGHT);
-                }
-                if (ques_y - cal_y == 1) {
-                    key = UP;
-                    //  console.log(UP);
-                }
-                if (ques_y - cal_y == -1) {
-                    key = DOWN;
-                    //console.log(DOWN);
-                }
-                if (service.checkIfDuplicate(key) == -1) service.selectedAnswer.push(key);
-            }
             // this function actually marks (changes the color) of  the a selected answer
             this.storeAnswerAndSelectTileForProcessing = function(key, tileDetail) {
                 // the user has already clicked on the nexbutton
+
+                $log.debug(tileDetail.x + " , " + tileDetail.y)
                 if (service.showNextButton.truthValue) return;
                 var question_tile = service.currentQuestionCells;
                 var ques_x = question_tile.x;
@@ -527,7 +500,7 @@
                     var cal_x = tileDetail.x;
                     var cal_y = tileDetail.y;
                     guessed_answer = tileDetail;
-                    service.getCorrespondingArrowKey(tileDetail);
+                 
                 } else {
                     var vector = vectors[key];
                     var cal_x = ques_x + vector.x;

@@ -164,21 +164,6 @@
                             GridGame1Service.storeAnswerAndSelectTileForProcessing(key);
                             // var result = GridGame1Service.checkIfAnswerIsValid(key);
                             self.factContent = GridGame1Service.getFactContent();
-                            /*   if(result == true){
-         self.updateScore(self.currentScore + 1);
-         self.factContent = GridGame1Service.getFactContent();
-         self.rightAnswer = true; 
-         GridGame1Service.deleteCurrentBoard();
-         GridGame1Service.buildStartingPosition();
-         self.counter++;     
-      }
-      else {
-           self.factContent = GridGame1Service.getFactContent();
-           self.rightAnswer = false;
-      } */
-                            //  $log.log(self.counter);
-                            //  if(self.counter > 4)
-                            //   self.gameOver = true;
                         } else {
                             // this means the key was duplicate.
                         }

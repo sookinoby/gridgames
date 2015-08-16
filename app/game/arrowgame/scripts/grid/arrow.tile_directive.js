@@ -10,8 +10,10 @@ angular.module('arrowGameGrid')
     templateUrl: 'game/arrowgame/scripts/grid/arrow.tile.html',
       link: function(scope) {
       // Cell generation
-      scope.selectTitleForProcessing = GridGame1Service.selectTitleForProcessing;
+      scope.storeAnswerAndSelectTileForProcessing = GridGame1Service.storeAnswerAndSelectTileForProcessing;
     }
   };
 });
 }());
+
+//selectTitleForProcessing
