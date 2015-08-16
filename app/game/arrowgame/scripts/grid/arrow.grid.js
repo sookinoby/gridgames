@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('arrowGameGrid', []).factory('GridGame1TileModel', function($log) {
+    angular.module('arrowGameGrid', []).factory('ArrowTileModel', function($log) {
         var Tile = function Tile(pos, val, answer, question) {
             this.x = pos.x;
             this.y = pos.y;
@@ -77,7 +77,7 @@
             this.size = sz ? sz : 0;
         };
         var service = this;
-        this.$get = function(GridGame1TileModel, $log) {
+        this.$get = function(ArrowTileModel, $log) {
             this.grid = [];
             this.tiles = [];
             this.gameData = [];
@@ -393,7 +393,7 @@
                 this.tiles[pos] = tile;
             };
             this.newTile = function(pos, value, answer, question) {
-                return new GridGame1TileModel(pos, value, answer, question);
+                return new ArrowTileModel(pos, value, answer, question);
             };
             /*
              * Remove a tile
@@ -485,7 +485,7 @@
             // this function actually marks (changes the color) of  the a selected answer
             this.storeAnswerAndSelectTileForProcessing = function(key, tileDetail) {
                 // the user has already clicked on the nexbutton
-
+                if(tileDetail)
                 $log.debug(tileDetail.x + " , " + tileDetail.y)
                 if (service.showNextButton.truthValue) return;
                 var question_tile = service.currentQuestionCells;
