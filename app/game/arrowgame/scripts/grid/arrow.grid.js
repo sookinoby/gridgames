@@ -522,8 +522,10 @@
                     y: guessed_answer.y
                 });
                 var index = service.storeSelectedPositions.indexOf(location);
+                //i the selected answer is not already in selected list implies this is new answer selection
+
                 if (index == -1) {
-                    if (service.linenumber == 3) return;
+                    if (service.linenumber == 4) return;
                     guessed_answer.flip();
                     service.storeSelectedPositions.push(service._coordinatesToPosition({
                         x: guessed_answer.x,
@@ -536,6 +538,7 @@
                     service.linenumber++;
                     //   console.log(service.factContent);
                 } else {
+                    // the selected answer is already in selected list. So user is trying to unslected
                     service.storeSelectedPositions.splice(index, 1);
                     guessed_answer.flip();
                     var tile = service.getCellAt({

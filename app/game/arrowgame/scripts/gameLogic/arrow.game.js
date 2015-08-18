@@ -15,27 +15,6 @@
         this.rightAnswer = false;
         this.netural = true;
         
-        this.factContent = [{
-            'fact': '1',
-            'select': false,
-            'wrong': false,
-            'right': false
-        }, {
-            'fact': '-',
-            'select': false,
-            'wrong': false,
-            'right': false
-        }, {
-            'fact': '-',
-            'select': false,
-            'wrong': false,
-            'right': false
-        }, {
-            'fact': '-',
-            'select': false,
-            'wrong': false,
-            'right': false
-        }];
         this.passButton = function() {
             GridGame1Service.passSubmitButton(this.showSubmitButton);
             GridGame1Service.passNextButton(this.showNextButton);
