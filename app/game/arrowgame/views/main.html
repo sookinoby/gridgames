@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-xs-8" >
                         <div id="game-container">
-                            <div grid1 id="game"  ng-model='ctrl.game' class="row"></div>
+                            <div arrow-grid id="game"  ng-model='ctrl.game' class="row"></div>
                             <div id="game-over" ng-show="!ctrl.game.countdownfinished" class="row game-overlay" >
                             <h3> <timer countdown="5" interval="1000"  name="gameCountDown">Your game will start in {{countdown}}</timer></h3>
                         </div>

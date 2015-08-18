@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('arrowGameGrid')
-.directive('grid1', function() {
+.directive('arrowGrid', function() {
   return {
     restrict: 'A',
     require: 'ngModel',
