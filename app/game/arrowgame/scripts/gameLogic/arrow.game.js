@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('arrowGameLogic', ['arrowGameGrid', 'gridGame1Data']).service('GridGame1Manager', function($q, $timeout, GridGame1Service, $log) {
+    angular.module('arrowGameLogic', ['arrowGameGrid']).service('arrowGameManager', function($q, $timeout, GridGame1Service, $log) {
         this.delay = 5000;
         this.positionToInsert = {};
         this.grid = GridGame1Service.grid;

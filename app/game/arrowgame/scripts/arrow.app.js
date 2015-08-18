@@ -1,13 +1,13 @@
 'use strict';
 (function() {
-    angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'gridGame1Data', 'arrowKeyboard']).controller('gridGame1Controller', function(GridGame1Manager, ArrowGameKeyboardService, $scope, GridGame1DataService, $routeParams) {
+    angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'gridGame1Data', 'arrowKeyboard']).controller('gridGame1Controller', function(arrowGameManager, ArrowGameKeyboardService, $scope, GridGame1DataService, $routeParams) {
         if ($routeParams.type == 2) {
             this.gameType = 2;
         } else {
             this.gameType = 1;
         }
         //  console.log("The type is" + this.gameType);
-        this.game = GridGame1Manager;
+        this.game = arrowGameManager;
         this.gameData = null;
         this.timerToggleButton = false;
         ArrowGameKeyboardService.destroy();
