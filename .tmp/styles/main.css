@@ -8494,7 +8494,7 @@ button.close {
     display: none !important;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000340}}
 html, body {
   margin: 0;
   padding: 0;
@@ -8504,7 +8504,7 @@ html, body {
   font-size: 18px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000350}}
 p {
   margin-top: 0;
   margin-bottom: 10px;
@@ -8516,24 +8516,24 @@ p {
   -webkit-margin-end: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000361}}
 a {
   color: #000000;
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000366}}
 a:hover {
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000372}}
 strong.important {
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000377}}
 hr {
   border: none;
   border-bottom: 1px solid #666666;
@@ -8541,12 +8541,12 @@ hr {
   margin-bottom: 30px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000384}}
 #heading {
   margin-top: 4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000388}}
 h1.title {
   font-size: 50px;
   font-weight: bold;
@@ -8555,13 +8555,13 @@ h1.title {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\0000396}}
 .scores-container {
   text-align: right;
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003101}}
 .score-container, .best-container, .total-facts, .fact, .smiley, .question-container {
   min-height: 2.5em;
   display: inline-block;
@@ -8578,12 +8578,12 @@ h1.title {
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003120}}
 #instructions {
   padding-top: 0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003125}}
 .game-button {
   display: inline-block;
   margin-top: 5px;
@@ -8603,23 +8603,23 @@ h1.title {
   width: 6.3em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003148}}
 #game-container {
   position: relative;
   width: 400px;
   height: 400px;
-  margin: 40px auto;
+  margin-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003155}}
 #game-container-2 {
   position: relative;
   width: 400px;
   height: 310px;
-  margin: 40px auto;
+  margin-left: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003162}}
 .game-overlay {
   width: 400px;
   height: 400px;
@@ -8633,17 +8633,17 @@ h1.title {
   font-size: 3em;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003175}}
 .game-overlay.game3overlay {
   height: 310px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003179}}
 .game-overlay .lower {
   display: block;
   margin-top: 29px;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003184}}
 .game-overlay .lower a {
   display: inline-block;
   background: #8f7a66;
@@ -8657,45 +8657,50 @@ h1.title {
   margin-left: 9px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003206}}
 .text-color-green {
   color: #04B404;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003209}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003210}}
 .text-color-red {
   color: #E0420D;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003214}}
 .background-color-blue {
   background-color: rgba(51, 153, 255, 0.8);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003218}}
 .background-color-green {
   background-color: rgba(4, 180, 4, 0.8);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003222}}
 .background-color-red {
   background-color: rgba(224, 66, 13, 0.8);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003228}}
 .background-color-default {
   background-color: #eee4da;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003232}}
+.background-color-white {
+  background-color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003237}}
 .top-space-40 {
   margin-top: 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003241}}
 #game {
   position: relative;
-  padding: 15px;
+  padding: 10px;
   cursor: default;
   background: #bbaaa0;
   border-radius: 6px;
@@ -8703,22 +8708,22 @@ h1.title {
   height: 400px;
   box-sizing: border-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003253}}
 #game.game3 {
   height: 310px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003257}}
 #game .grid-container {
   position: absolute;
   z-index: 1;
   margin: 0 auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003258}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003262}}
 #game .grid-container .grid-cell {
-  width: 81.25px;
-  height: 81.25px;
-  margin-bottom: 15px;
-  margin-right: 15px;
+  width: 87.5px;
+  height: 87.5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
   float: left;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -8727,22 +8732,22 @@ h1.title {
   -webkit-animation: appear 4s 0s ease-in 1;
   animation: appear 4s 0s ease-in 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003271}}
 #game .grid-container .grid-cell:last-child {
   margin-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003273}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003277}}
 #game .tile-container {
   position: absolute;
   z-index: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003281}}
 #game .tile-container .tile {
   font-family: "Open Sans", sans-serif;
   position: absolute;
   font-size: 8px;
-  width: 81.25px;
-  height: 81.25px;
+  width: 87.5px;
+  height: 87.5px;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -8750,122 +8755,122 @@ h1.title {
   transition-property: transform;
   z-index: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003301}}
 #game .tile-container .tile.tile-merged .tile-inner {
   -webkit-animation: pop 50ms ease-in;
   animation: pop 50ms ease-in;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-0-0 {
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-0-1 {
-  -webkit-transform: translate(0px, 96.25px);
-  transform: translate(0px, 96.25px);
+  -webkit-transform: translate(0px, 97.5px);
+  transform: translate(0px, 97.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-0-2 {
-  -webkit-transform: translate(0px, 192.5px);
-  transform: translate(0px, 192.5px);
+  -webkit-transform: translate(0px, 195px);
+  transform: translate(0px, 195px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-0-3 {
-  -webkit-transform: translate(0px, 288.75px);
-  transform: translate(0px, 288.75px);
+  -webkit-transform: translate(0px, 292.5px);
+  transform: translate(0px, 292.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-1-0 {
-  -webkit-transform: translate(96.25px, 0px);
-  transform: translate(96.25px, 0px);
+  -webkit-transform: translate(97.5px, 0px);
+  transform: translate(97.5px, 0px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-1-1 {
-  -webkit-transform: translate(96.25px, 96.25px);
-  transform: translate(96.25px, 96.25px);
+  -webkit-transform: translate(97.5px, 97.5px);
+  transform: translate(97.5px, 97.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-1-2 {
-  -webkit-transform: translate(96.25px, 192.5px);
-  transform: translate(96.25px, 192.5px);
+  -webkit-transform: translate(97.5px, 195px);
+  transform: translate(97.5px, 195px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-1-3 {
-  -webkit-transform: translate(96.25px, 288.75px);
-  transform: translate(96.25px, 288.75px);
+  -webkit-transform: translate(97.5px, 292.5px);
+  transform: translate(97.5px, 292.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-2-0 {
-  -webkit-transform: translate(192.5px, 0px);
-  transform: translate(192.5px, 0px);
+  -webkit-transform: translate(195px, 0px);
+  transform: translate(195px, 0px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-2-1 {
-  -webkit-transform: translate(192.5px, 96.25px);
-  transform: translate(192.5px, 96.25px);
+  -webkit-transform: translate(195px, 97.5px);
+  transform: translate(195px, 97.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-2-2 {
-  -webkit-transform: translate(192.5px, 192.5px);
-  transform: translate(192.5px, 192.5px);
+  -webkit-transform: translate(195px, 195px);
+  transform: translate(195px, 195px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-2-3 {
-  -webkit-transform: translate(192.5px, 288.75px);
-  transform: translate(192.5px, 288.75px);
+  -webkit-transform: translate(195px, 292.5px);
+  transform: translate(195px, 292.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-3-0 {
-  -webkit-transform: translate(288.75px, 0px);
-  transform: translate(288.75px, 0px);
+  -webkit-transform: translate(292.5px, 0px);
+  transform: translate(292.5px, 0px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-3-1 {
-  -webkit-transform: translate(288.75px, 96.25px);
-  transform: translate(288.75px, 96.25px);
+  -webkit-transform: translate(292.5px, 97.5px);
+  transform: translate(292.5px, 97.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-3-2 {
-  -webkit-transform: translate(288.75px, 192.5px);
-  transform: translate(288.75px, 192.5px);
+  -webkit-transform: translate(292.5px, 195px);
+  transform: translate(292.5px, 195px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003318}}
 #game .tile-container .tile.position-3-3 {
-  -webkit-transform: translate(288.75px, 288.75px);
-  transform: translate(288.75px, 288.75px);
+  -webkit-transform: translate(292.5px, 292.5px);
+  transform: translate(292.5px, 292.5px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003328}}
 #game .tile-container .tile.normal-color .tile-inner {
   background: rgba(238, 228, 218, 0.35);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003333}}
 #game .tile-container .tile.tile-question .tile-inner {
   background: #0EBFE9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003337}}
 #game .tile-container .tile.right-answer .tile-inner {
   background: #3DF577;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003340}}
 #game .tile-container .tile.selected-answer .tile-inner {
   background: #E0FFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003346}}
 #game .tile-container .tile.wrong-answer .tile-inner {
   background: #E0420D;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003350}}
 #game .tile-container .tile.wrong-answer-text .tile-inner {
   color: #E0420D;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003354}}
 #game .tile-container .tile:last-child {
   margin-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003358}}
 #game .tile-container .tile .tile-inner {
-  line-height: 85px;
+  line-height: 90px;
   text-align: center;
   font-weight: bold;
   z-index: 10;
@@ -8960,4 +8965,85 @@ body {
 .footer {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000327}}
+.outer-game-box {
+  border: 2px;
+  border-style: solid;
+  width: 622px;
+  height: 580px;
+  margin: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000335}}
+.inner-game-box {
+  margin: auto;
+  padding: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000340}}
+.strategy-title {
+  width: 576px;
+  height: 70px;
+  text-align: center;
+  border: 2px solid;
+  line-height: 70px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000349}}
+.strategy-title span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000355}}
+.button-top-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000360}}
+.button-top-bar > button {
+  width: 189px;
+  height: 50px;
+  font-size: 1.1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000366}}
+.game-side-bar {
+  display: block;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000370}}
+.game-side-bar > span {
+  display: block;
+  margin-left: 10px;
+  background-color: #fff;
+  width: 158px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-align: center;
+  height: 60px;
+  border-top: 2px solid #46b8da;
+  border-right: 2px solid #46b8da;
+  border-left: 2px solid #46b8da;
+  border-bottom: 2px solid #46b8da;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000387}}
+.game-side-bar .build-facts {
+  height: 118px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000389}}
+.game-side-bar .build-facts span {
+  display: block;
+  width: 154px;
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000396}}
+.game-side-bar .build-facts span:last-child {
+  border-bottom: none;
 }

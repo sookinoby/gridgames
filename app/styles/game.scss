@@ -5,12 +5,13 @@
 $width: 400px;
 $height: 310px;
 $max-tile-count: 4;
-$tile-padding: 15px;
+$tile-padding: 10px;
 $tile-default-color: #EEE4DA;
 $tile-question-color: #0EBFE9;
 $tile-wrong-color: #E0420D;
 $tile-right-color : #3DF577;
 $tile-select-color : #E0FFFF;
+$white : #FFFFFF;
 $green-color : #04B404;
 $red-color: #E0420D;
 $default-color: #EEE4DA;
@@ -148,14 +149,14 @@ h1.title {
    position: relative;
    width: $width;
    height: $width;
-   margin: 40px auto;
+   margin-left: 0px; 
 }
 
 #game-container-2 {
    position: relative;
    width: $width;
    height: $height;
-   margin: 40px auto;
+   margin-left: 0px; 
 }
 
 .game-overlay {
@@ -228,6 +229,9 @@ color:$red-color;
  background-color:rgba($default-color,1.00);
 }
 
+.background-color-white {
+ background-color:rgba($white,1.00);
+}
 
 
 .top-space-40 {

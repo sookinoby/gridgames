@@ -1,106 +1,152 @@
 <div ng-controller='gridGame1Controller as ctrl'>
     <!-- heading -->
-    <div id="heading" class="row">
-
-        <div class="col-md-8 col-xs-12" >
-            <h1 class="title" style=" border-style: solid; border-width: 5px;">{{ctrl.titleOfStrategy}}</h1>
-            <button ng-click='ctrl.newGame();' class="game-button"  >New game</button>
-
-            <button ng-click='ctrl.game.changeStats()' class="game-button"  ng-if="ctrl.game.stats" >Score off</button>
-            <button ng-click='ctrl.game.changeStats()' class="game-button"  ng-if="!ctrl.game.stats"  >Score on</button>
-            <button class="game-button" ng-click="ctrl.timerToggleButton = !ctrl.timerToggleButton">{{!ctrl.timerToggleButton && 'Timer On' || 'Timer Off'}}</button>
-
-            <button ng-show='ctrl.game.showSubmitButton.truthValue;' ng-click="ctrl.game.evaluateAnswer();" class="game-button"   >Submit</button>
-            <button ng-if='ctrl.game.showNextButton.truthValue;' ng-click="ctrl.game.showNextQuestions();" class="game-button">Next </button>
-
-
-
-        </div>
-
-        </div> <!-- heading -->
-        <!-- instructions -->
-        <!-- instructions
-        <button ng-click="startTimer()" ng-disabled="timerRunning">Start Timer</button>
-        <button ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
-    <timer autoStart="false" interval="1000">{{seconds}}</timer>  -->
-    <div class="row" >
-        <div class="col-xs-9 col-md-9">
-            <div class="col-xs-9 col-md-9">
-                <!-- begining of game container -->
-                <div id="game-container">
-                    <div grid1 id="game"  ng-model='ctrl.game' class="row"></div>
-
-                    <div id="game-over" ng-show="!ctrl.game.countdownfinished" class="row game-overlay" >
-                    <h3> <timer countdown="5" interval="1000"  name="gameCountDown">Your game will start in {{countdown}}</timer></h3>
-                </div>
-                <div id="game-over" ng-if="ctrl.game.gameOver" class="row game-overlay">
-                    <h3>  Sorry , play again.
-                    <div class="lower">
-                        <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+    <div  id="heading" class="row">
+        <div class="col-sm-12" >
+            <div class="outer-game-box">
+                <div class="inner-game-box" >
+                    <div class="strategy-title">
+                        <span> Count Up By One </span>
                     </div>
-                    </h3>
-                </div>
-                <!-- begining of win overlay -->
-                <div id="win" ng-if="ctrl.game.win" class="row game-overlay">
-                    You win!
-                    <div class="lower">
-                        <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                    <div class="button-top-bar">
+                        <button type="button" class="btn btn-info">New Game</button>
+                        <button type="button" class="btn btn-info">Score Off</button>
+                        <button type="button" class="btn btn-info">Submit</button>
                     </div>
-                </div>
-                <!-- end of win overlay -->
-                </div>     <!-- Game Container -->
-                <!-- end of 8 column layout -->
-                </div> <!-- col md 3 -->
-                <!-- begining of 3 column layout -->
-                <div class="col-xs-3 col-md-3"  style="margin-left:0px;" >
-
-                    <!--           <div class="row"  >
+                    <div class="col-xs-8" >
+                        <div id="game-container">
+                            <div grid1 id="game"  ng-model='ctrl.game' class="row"></div>
+                            <div id="game-over" ng-show="!ctrl.game.countdownfinished" class="row game-overlay" >
+                            <h3> <timer countdown="5" interval="1000"  name="gameCountDown">Your game will start in {{countdown}}</timer></h3>
+                        </div>
+                        <div id="game-over" ng-if="ctrl.game.gameOver" class="row game-overlay">
+                            <h3>  Sorry , play again.
+                            <div class="lower">
+                                <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                            </div>
+                            </h3>
+                        </div>
+                        <!-- begining of win overlay -->
+                        <div id="win" ng-if="ctrl.game.win" class="row game-overlay">
+                            You win!
+                            <div class="lower">
+                                <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                            </div>
+                        </div>
+                        <!-- end of win overlay -->
+                        </div> <!-- game-container -->
+                        </div> <!-- end of col-sm-8 -->
+                        <div class="col-xs-2 game-side-bar" >
+                            <span>Score <br /> 
+                                    5
+                            </span>                
+                             <span> Total Questions <br />
+                             10
+                             </span>  
+                            <br />
+                            <br />
+                            <span> 
+            
+                            
+                                <span ng-if="ctrl.game.rightAnswer && !ctrl.game.netural" ><img  src="game/arrowgame/images/happy.png" style="margin-top:1px;" /> </span>
+                                    <span ng-if="!ctrl.game.rightAnswer && !ctrl.game.netural" ><img  src="game/arrowgame/images/sad.png" style="margin-top:1px;" /></span>
+                             </span>    
+                             <br />
+                             <br />
+                             <span class="build-facts">
+                                    Build Facts <br />
+                                 <span ng-show="ctrl.gameType == 1">
                                     
-                                        <div class="question-container"><div>Question</div><div style="background-color-default;color:#000000;font-size:20px;">{{ctrl.shortTitleOfStrategy | uppercase}}</div>
+                                    <span  ng-repeat="factdisp in ctrl.game.factContent" ng-class="{'background-color-white':!factdisp.select && !factdisp.right && !factdisp.wrong ,  'background-color-green':factdisp.right, 'background-color-red':factdisp.wrong, 'background-color-blue':factdisp.select }">{{factdisp.fact}} 
+                                    </span>  
+                                    
+                                     </span>
+                                   
+                                   
+                            </span>
+                            </div> <!-- end of col-sm-2 -->
+                            </div> <!-- inner game box -->
+                            </div> <!-- outer game box -->
+                            </div> <!-- col sm 12 -->
+                            </div> <!-- end of id = heading -->
+
+
+
+                            <div id="heading" class="row">
+                                <div class="col-md-8 col-xs-12" >
+                                    <h1 class="title" style=" border-style: solid; border-width: 5px;">{{ctrl.titleOfStrategy}}</h1>
+                                    <button ng-click='ctrl.newGame();' class="game-button"  >New game</button>
+                                    <button ng-click='ctrl.game.changeStats()' class="game-button"  ng-if="ctrl.game.stats" >Score off</button>
+                                    <button ng-click='ctrl.game.changeStats()' class="game-button"  ng-if="!ctrl.game.stats"  >Score on</button>
+                                    <button class="game-button" ng-click="ctrl.timerToggleButton = !ctrl.timerToggleButton">{{!ctrl.timerToggleButton && 'Timer On' || 'Timer Off'}}</button>
+                                    <button ng-show='ctrl.game.showSubmitButton.truthValue;' ng-click="ctrl.game.evaluateAnswer();" class="game-button"   >Submit</button>
+                                    <button ng-if='ctrl.game.showNextButton.truthValue;' ng-click="ctrl.game.showNextQuestions();" class="game-button">Next </button>
                                 </div>
-                </div>  -->
-                <div class="row"> <div ng-if="ctrl.timedGame;" class="total-facts" ng-if="ctrl.game.stats" ><div>Timer</div><div>
-            <timer countdown="120" interval="1000" name="gameTimer" autoStart=false>{{countdown}}</timer>  </div> </div>        </div>
-
-            <div class="row" ng-show="ctrl.gameType == 1" ><div class="fact"><div>Build Facts</div>    <div ng-repeat="factdisp in ctrl.game.factContent">
-            <div ng-class="{'background-color-default':!factdisp.select && !factdisp.right && !factdisp.wrong ,  'background-color-green':factdisp.right, 'background-color-red':factdisp.wrong, 'background-color-blue':factdisp.select }">{{factdisp.fact}}</div>
-        </div>   </div></div>
-        <div class="row" ><div class="smiley"> <span ng-if="ctrl.game.rightAnswer && !ctrl.game.netural" ><img  src="game/arrowgame/images/happy.png" /> </span>
-            <span ng-if="!ctrl.game.rightAnswer && !ctrl.game.netural" ><img  src="game/arrowgame/images/sad.png" /></span>
-        </div></div>
-
-        <div class="row"><div class="score-container" ng-if="ctrl.game.stats"><div>Score</div>
-        <div>   {{ctrl.game.currentScore}}</div></div></div>
-
-        <div class="row" > <div class="total-facts" ng-if="ctrl.game.stats"><div>Total Questions</div> <div>{{ctrl.game.totalfacts}}</div></div>            </div>
-
-    </div>
-    <!-- end of inner 3 column -->
-    </div><!-- end of  9 column -->
-    <br />
-    <div class="col-xs-3 col-md-3">
-        <!--      <div class="row" ><button ng-click='ctrl.sendBroadCast();' class="game-button"  >Broad Cast</button></div>
-        <div class="row" ><button ng-click='ctrl.sendBroadTest();' class="game-button"  >Test Cast</button></div> -->
-
-
-        <!--begining of score container -->
-
-        <div class="row">
-            <div dropdown-select="ddSelectOptions"
-                dropdown-model="ddSelectSelected"
-                dropdown-item-label="text" style="margin-left:0px;border-style: solid; border-width: 5px;">
-            </div>
-
-
-
-            <!-- score container -->
-        </div>
-
-
-
-
-        <!-- col3 -->
-    </div>
-    <!-- end of row of game and score -->
-</div>
-<!-- end of content and controller -->
+                                </div> <!-- heading -->
+                                <!-- instructions -->
+                                <!-- instructions
+                                                        <button ng-click="startTimer()" ng-disabled="timerRunning">Start Timer</button>
+                                                        <button ng-click="stopTimer()" ng-disabled="!timerRunning">Stop Timer</button>
+                            <timer autoStart="false" interval="1000">{{seconds}}</timer>  -->
+                            <div class="row" >
+                                <div class="col-xs-9 col-md-9">
+                                    <div class="col-xs-9 col-md-9">
+                                        <!-- begining of game container -->
+                                        <div id="game-container">
+                                            <div grid1 id="game"  ng-model='ctrl.game' class="row"></div>
+                                            <div id="game-over" ng-show="!ctrl.game.countdownfinished" class="row game-overlay" >
+                                            <h3> <timer countdown="5" interval="1000"  name="gameCountDown">Your game will start in {{countdown}}</timer></h3>
+                                        </div>
+                                        <div id="game-over" ng-if="ctrl.game.gameOver" class="row game-overlay">
+                                            <h3>  Sorry , play again.
+                                            <div class="lower">
+                                                <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                                            </div>
+                                            </h3>
+                                        </div>
+                                        <!-- begining of win overlay -->
+                                        <div id="win" ng-if="ctrl.game.win" class="row game-overlay">
+                                            You win!
+                                            <div class="lower">
+                                                <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                                            </div>
+                                        </div>
+                                        <!-- end of win overlay -->
+                                        </div>     <!-- Game Container -->
+                                        <!-- end of 8 column layout -->
+                                        </div> <!-- col md 3 -->
+                                        <!-- begining of 3 column layout -->
+                                        <div class="col-xs-3 col-md-3"  style="margin-left:0px;" >
+                                            <!--           <div class="row"  >
+                                                                                                    </div>
+                                        </div>  -->
+                                        <div class="row"> <div ng-if="ctrl.timedGame;" class="total-facts" ng-if="ctrl.game.stats" ><div>Timer</div><div>
+                                    <timer countdown="120" interval="1000" name="gameTimer" autoStart=false>{{countdown}}</timer>  </div> </div>        </div>
+                                    <div class="row" ng-show="ctrl.gameType == 1" ><div class="fact"><div>Build Facts</div>    <div ng-repeat="factdisp in ctrl.game.factContent">
+                                    <div ng-class="{'background-color-default':!factdisp.select && !factdisp.right && !factdisp.wrong ,  'background-color-green':factdisp.right, 'background-color-red':factdisp.wrong, 'background-color-blue':factdisp.select }">{{factdisp.fact}}</div>
+                                </div>   </div></div>
+                                <div class="row" ><div class="smiley"> <span ng-if="ctrl.game.rightAnswer && !ctrl.game.netural" ><img  src="game/arrowgame/images/happy.png" /> </span>
+                                    <span ng-if="!ctrl.game.rightAnswer && !ctrl.game.netural" ><img  src="game/arrowgame/images/sad.png" /></span>
+                                </div></div>
+                                <div class="row"><div class="score-container" ng-if="ctrl.game.stats"><div>Score</div>
+                                <div>   {{ctrl.game.currentScore}}</div></div></div>
+                                <div class="row" > <div class="total-facts" ng-if="ctrl.game.stats"><div>Total Questions</div> <div>{{ctrl.game.totalfacts}}</div></div>            </div>
+                            </div>
+                            <!-- end of inner 3 column -->
+                            </div><!-- end of  9 column -->
+                            <br />
+                            <div class="col-xs-3 col-md-3">
+                                <!--      <div class="row" ><button ng-click='ctrl.sendBroadCast();' class="game-button"  >Broad Cast</button></div>
+                                <div class="row" ><button ng-click='ctrl.sendBroadTest();' class="game-button"  >Test Cast</button></div> -->
+                                <!--begining of score container -->
+                                <div class="row">
+                                    <div dropdown-select="ddSelectOptions"
+                                        dropdown-model="ddSelectSelected"
+                                        dropdown-item-label="text" style="margin-left:0px;border-style: solid; border-width: 5px;">
+                                    </div>
+                                    <!-- score container -->
+                                </div>
+                                <!-- col3 -->
+                            </div>
+                            <!-- end of row of game and score -->
+                        </div>
+                        <!-- end of content and controller -->
