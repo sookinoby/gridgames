@@ -558,19 +558,24 @@
                     var temp_factContent = service.clone(service.factContent);
                     var k = 0;
                     var length = service.factContent.length;
+                    // this loop copies everything in fact content that is not "-". 
                     for (var i = 0; i < service.factContent.length; i++) {
                         //  console.log(service.factContent[i].fact)
                         if (service.factContent[i].fact != "-") {
                             temp_factContent[k].fact = service.factContent[i].fact;
                             temp_factContent[k].select = service.factContent[i].select;
-                            console.log(temp_factContent[k].fact)
-                            console.log(temp_factContent[k].select)
+                            temp_factContent[k].isAnswer = service.factContent[i].isAnswer;
+                            $log.debug("the fact" + temp_factContent[k].fact)
+                            $log.debug("the select" + temp_factContent[k].select)
+                            $log.debug("the answer" + temp_factContent[k].isAnswer)
                             k++;
                         }
                     }
+                    // this loop copies the clone temp_factContent back to factContent
                     for (var i = 0; i < k; i++) {
                         service.factContent[i].fact = temp_factContent[i].fact;
                         service.factContent[i].select = temp_factContent[i].select;
+                        service.factContent[i].isAnswer = temp_factContent[k].isAnswer;
                     }
                     for (var j = k; j < length; j++) {
                         service.factContent[j].fact = "-";
@@ -588,6 +593,7 @@
                     if (this.factContent[i].select == true) {
                         if (this.factContent[i].isAnswer == true) {
                             this.factContent[i].right = true;
+                            $log.debug(this.factContent[i]);
                         } else {
                             this.factContent[i].wrong = true;
                         }
