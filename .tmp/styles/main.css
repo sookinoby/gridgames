@@ -9036,18 +9036,23 @@ body {
   border-left: 2px solid #46b8da;
   border-bottom: 2px solid #46b8da;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000389}}
+.game-side-bar .spacer {
+  border: none;
+  background-color: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000394}}
 .game-side-bar .build-facts {
   height: 118px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000396}}
 .game-side-bar .build-facts span {
   display: block;
   width: 154px;
   text-align: center;
   border-bottom: 1px solid #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/main\.scss}line{font-family:\00003103}}
 .game-side-bar .build-facts span:last-child {
   border-bottom: none;
 }

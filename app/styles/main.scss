@@ -84,8 +84,12 @@ body {
   	border-right: 2px solid #46b8da;
   	border-left: 2px solid #46b8da;
   	border-bottom: 2px solid #46b8da;
-  	
 	}
+
+	.spacer {
+  		border: none;
+  		background-color:transparent;
+  	}
 
 	.build-facts {
 	 	height: 118px;

@@ -618,6 +618,7 @@
                 return true;
             }
             this.evaluateAnswer = function evaluateAnswer() {
+                var isAnswerCorrect = true;
                 for (var i = 0; i < this.storeSelectedPositions.length; i++) {
                     // console.log(this.storeSelectedPositions);
                     var vector = this._positionToCoordinates(this.storeSelectedPositions[i]);
@@ -640,6 +641,7 @@
                             right_answer.setChangeColor();
                             //  alert(result);
                         }
+                        isAnswerCorrect = false;
                     } else if (result) {
                         points_for_questions = points_for_questions + 1;
                         // console.log("correct answer");
@@ -656,7 +658,11 @@
                 }
                 $log.debug(points_for_questions);
                 this.factContentColorChange();
+                if(isAnswerCorrect === true)
                 return points_for_questions;
+                else {
+                    return 0;
+                }
             };
 
             this.passSubmitButton = function(submitButton) {
