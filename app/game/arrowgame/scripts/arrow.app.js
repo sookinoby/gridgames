@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-    angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'arrowGameData', 'arrowKeyboard']).controller('arrowGameController', function(arrowGameManager, ArrowGameKeyboardService, $scope, arrowGameDataService, $routeParams) {
+    angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'arrowGameCommonService', 'arrowKeyboard']).controller('arrowGameController', function(arrowGameManager, ArrowGameKeyboardService, $scope, arrowGameDataService, $routeParams) {
         if ($routeParams.type == 2) {
             this.gameType = 2;
         } else {
@@ -51,7 +51,7 @@
             }
             if (this.gameType == 1) {
                 $scope.ddSelectSelected = {
-                    'text': "The Add 0 Strategy",
+                    'text': "The ^A?dd ^Zero? Strategy",
                     'value': "A0"
                 };
             }
