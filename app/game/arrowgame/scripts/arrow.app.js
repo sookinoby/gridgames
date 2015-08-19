@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-    angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'gridGame1Data', 'arrowKeyboard']).controller('gridGame1Controller', function(arrowGameManager, ArrowGameKeyboardService, $scope, GridGame1DataService, $routeParams) {
+    angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'arrowGameData', 'arrowKeyboard']).controller('arrowGameController', function(arrowGameManager, ArrowGameKeyboardService, $scope, arrowGameDataService, $routeParams) {
         if ($routeParams.type == 2) {
             this.gameType = 2;
         } else {
@@ -25,7 +25,7 @@
         this.loadGameData = function() {
             var self = this;
             var scope = $scope;
-            var promise = GridGame1DataService.getGameData(this.gameType);
+            var promise = arrowGameDataService.getGameData(this.gameType);
             promise.then(function(data) {
                 self.initialiseDropDown();
                 //  console.log("test" + data.data.GameData);

@@ -7,24 +7,26 @@ $height: 310px;
 $max-tile-count: 4;
 $tile-padding: 10px;
 $tile-default-color: #EEE4DA;
-$tile-question-color: #0EBFE9;
+$tile-question-color: #43CEFF;
 $tile-wrong-color: #E0420D;
-$tile-right-color : #3DF577;
-$tile-select-color : #E0FFFF;
+$tile-right-color : #00AF4F;
+$tile-select-color : #CCC0DA;
+$tile-right-not-select-color: #D8E4BC;
 $white : #FFFFFF;
-$green-color : #04B404;
+$green-color : #006400;
 $red-color: #E0420D;
 $default-color: #EEE4DA;
 $blue-color:#3399ff;
-$tile-font-size: 8px;
+$tile-font-size: 1.1em;
+$tile-font-size-question: 1.4em;
+$tile-font-color: #000000;
 $tile-radius: 3px;
 $tile-font: 'Open Sans', sans-serif;
 $colors: #EEE4DA, #EAE0C8, #F59563, #3399ff, #ffa333, #cef030, #2b81d6;
-
+$arrow-game-background : #C5D9F1;
 $game-container-background: #bbada0;
-$tile-color: #eee4da;
-$tile-gold-color: #edc22e;
-$tile-gold-glow-color: lighten($tile-gold-color, 15%);
+$tile-background-color:lighten($white, 15%);
+
 $text-color: #000000;
 $bright-text-color: #f9f6f2;
 
@@ -41,7 +43,7 @@ html, body {
   margin: 0;
   padding: 0;
 
-  background: #faf8ef;
+  background: #FFFFFF;
   color: $text-color;
   font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
@@ -141,9 +143,6 @@ h1.title {
    width: 6.3em;
 }
 
-#content {
-   
-}
 
 #game-container {
    position: relative;
@@ -242,7 +241,7 @@ margin-top:40px;
   position: relative;
   padding: $tile-padding;
   cursor: default;
-  background: #bbaaa0;
+  background: $arrow-game-background;
   border-radius: 6px;
   width: $width;
   height: $width;
@@ -264,9 +263,10 @@ margin-top:40px;
       height: $tile-size; //($width / $max-tile-count) - ($tile-padding + ($tile-radius * 2));
       margin-bottom: $tile-padding;
       margin-right: $tile-padding;
+      background: $tile-background-color;
       float: left;
       @include border-radius($tile-radius);
-      background: rgba(238, 228, 218, 0.35);
+      
       @include animation(appear $apperance-time 0s ease-in 1);
        &:last-child {
         margin-right: 0
@@ -281,9 +281,9 @@ margin-top:40px;
     .tile {
       font-family: $tile-font;
       position: absolute;
-      font-size: $tile-font-size;
       width: $tile-size;
       height: $tile-size;
+      background: $tile-background-color;
       @include border-radius($tile-radius);
      
       // @include transition-property(transform);
@@ -324,33 +324,35 @@ margin-top:40px;
           }
         }
       }
-     
-     &.normal-color .tile-inner {
-        background: rgba($tile-default-color, .35);
-     }
     
-    
-     &.tile-question .tile-inner {
-         background: $tile-question-color;
-      }
-    
-     &.right-answer .tile-inner {
-         background: $tile-right-color;
-      }
-      &.selected-answer .tile-inner {
+     &.selected-answer .tile-inner {
          background: $tile-select-color;
           
       }
-   
-    
-     &.wrong-answer .tile-inner {
-         background: $tile-wrong-color;
+
+     &.tile-question .tile-inner {
+         background: $tile-question-color;
+         font-size: $tile-font-size-question;
+        
       }
     
-      &.wrong-answer-text .tile-inner {
+     &.right-answer .tile-inner {
+         background: $tile-background-color;
+         font-size:  $tile-font-size-question;
+         color:  $tile-right-color;
+      }
+
+      &.wrong-answer .tile-inner {
+         background: $tile-background-color;
+         font-size: $tile-font-size-question;
          color: $red-color;
       }
-    
+
+        &.tile-right-not-selected .tile-inner {
+         background: $tile-right-not-select-color;
+         font-size: $tile-font-size;
+      }
+
       &:last-child {
         margin-right: 0
       }
@@ -361,7 +363,8 @@ margin-top:40px;
         text-align: center;
         font-weight: bold;
         z-index: 10;
-        font-size: 2.5em;
+        font-size:  $tile-font-size;
+        color:$tile-font-color;
       }
     }
   }

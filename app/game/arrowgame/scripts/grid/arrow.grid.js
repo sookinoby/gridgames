@@ -643,8 +643,14 @@
                     } else if (result) {
                         points_for_questions = points_for_questions + 1;
                         // console.log("correct answer");
-                        guessed_answer.resetSelected();
+                      //  guessed_answer.resetSelected();
                         guessed_answer.setChangeColor();
+                        var right_answers = this.getAnswerTile();
+                        for (var j = 0; j < right_answers.length; j++) {
+                            var right_answer = right_answers[j];
+                            right_answer.setChangeColor();
+                            //  alert(result);
+                        }
                         //   alert(result);
                     }
                 }

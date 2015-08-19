@@ -1,5 +1,5 @@
 (function() {
-  var gridGame1DataService = function ($http,$q) {
+  var arrowGameDataService = function ($http,$q) {
    
       this.getGameData = function(gameDataFile)
       {
@@ -13,6 +13,6 @@
           return deferred.promise;
       }
   };
-angular.module('gridGame1Data',[]).service('GridGame1DataService',gridGame1DataService);
+angular.module('arrowGameData',[]).service('arrowGameDataService',arrowGameDataService);
 
 }());

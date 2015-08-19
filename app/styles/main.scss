@@ -5,11 +5,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "game.scss";
 .browsehappy {
   margin: 0.2em 0;
-  background: #ccc;
+  background: #FFFFFF;
   color: #000;
   padding: 0.2em 0;
 }
 
+$outer-game-box : #FDE9D9;
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -30,7 +31,9 @@ body {
 	width: 622px;
 	height: 580px;
 	margin: auto;
+	background-color:rgba($outer-game-box, .50);
 }
+
 
 .inner-game-box {
 	margin: auto;
@@ -70,7 +73,7 @@ body {
 	> span {
 	display: block;
 	margin-left: 10px;
-	background-color: #fff;
+	background-color: #FFFFFF;
 	width: 158px;
 	display: inline-block;
   	vertical-align: middle;
