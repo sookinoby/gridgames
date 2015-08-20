@@ -24,14 +24,14 @@ angular
     $logProvider.debugEnabled(true)
     $routeProvider
       .when('/', {
-         templateUrl: 'game/game3/views/main.html'
+         templateUrl: 'game/selectstrategy/views/main.html'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
       .when('/game/3', {
-        templateUrl: 'game/game3/views/main.html',
+        templateUrl: 'game/selectstrategy/views/main.html',
       })
       .when('/game/:type', {
         templateUrl: 'game/arrowgame/views/main.html',

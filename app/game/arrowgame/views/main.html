@@ -63,17 +63,21 @@
                              </span>    
                              <br />
                              <br />
-                             <span class="build-facts">
+                             <span class="build-facts" ng-show="ctrl.gameType == 1">
                                     Build Facts <br />
-                                 <span ng-show="ctrl.gameType == 1">
+                             <span>
                                     
                                     <span  ng-repeat="factdisp in ctrl.game.factContent" ng-class="{'background-color-white':!factdisp.select && !factdisp.right && !factdisp.wrong ,  'background-color-green':factdisp.right, 'background-color-red':factdisp.wrong, 'background-color-blue':factdisp.select }">{{factdisp.fact}} 
                                     </span>  
-                                    
-                                     </span>
-                                   
-                                   
                             </span>
+                            </span>
+                             <br />
+                             <br />
+                             <span ng-show="ctrl.gameType == 2"> Timer <br />
+                                <timer countdown="120" interval="1000" name="gameTimer" autoStart=false>{{countdown}}</timer> 
+                             </span>  
+                         
+
                             </div> <!-- end of col-sm-2 -->
                             </div> <!-- inner game box -->
                             </div> <!-- outer game box -->

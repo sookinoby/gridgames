@@ -633,7 +633,7 @@
                     }
                     var result = guessed_answer.answer;
                     //  console.log(guessed_answer);
-                    if (result == false) {
+                    if (result == false) {              
                         guessed_answer.setChangeColor();
                         var right_answers = this.getAnswerTile();
                         for (var j = 0; j < right_answers.length; j++) {
@@ -659,7 +659,7 @@
                 $log.debug(points_for_questions);
                 this.factContentColorChange();
                 if(isAnswerCorrect === true)
-                return points_for_questions;
+                    return points_for_questions;
                 else {
                     return 0;
                 }

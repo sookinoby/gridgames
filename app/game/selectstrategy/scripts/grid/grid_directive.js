@@ -8,7 +8,7 @@ angular.module('gridGameThreeGrid')
     scope: {
       ngModel: '='
     },
-    templateUrl: 'game/game3/scripts/grid/grid.html',
+    templateUrl: 'game/selectstrategy/scripts/grid/grid.html',
     link: function(scope) {
       // Cell generation
       scope.grid = scope.ngModel.grid;

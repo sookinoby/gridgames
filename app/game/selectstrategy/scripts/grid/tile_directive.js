@@ -7,7 +7,7 @@ angular.module('gridGameThreeGrid')
     scope: {
       ngModel: '='
     },
-    templateUrl: 'game/game3/scripts/grid/tile.html',
+    templateUrl: 'game/selectstrategy/scripts/grid/tile.html',
     link: function(scope) {
       // Cell generation
       scope.storeAnswer = GridService.storeAnswer;
