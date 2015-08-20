@@ -2,6 +2,7 @@
     'use strict';
     angular.module('arrowGameLogic', ['arrowGameGrid']).service('arrowGameManager', function($q, $timeout, GridGame1Service, $log) {
         this.delay = 5000;
+        this.delayedTriggerHolder = null;
         this.positionToInsert = {};
         this.grid = GridGame1Service.grid;
         this.tiles = GridGame1Service.tiles;
@@ -56,14 +57,19 @@
         };
         this.reinit();
         this.newGame = function(gameData, nameOfStrategy) {
-            self = this;
+            var self = this;
+            if(self.delayedTriggerHolder)
+            {
+                $timeout.cancel(self.delayedTriggerHolder);
+            }
             GridGame1Service.deleteCurrentBoard();
             GridGame1Service.buildDataForGame(gameData, nameOfStrategy);
             GridGame1Service.buildEmptyGameBoard();
-            $timeout(function() {
+            self.delayedTriggerHolder = $timeout(function tobuilstartinPosition() {
                 self.positionToInsert = GridGame1Service.buildStartingPosition();
                 $log.debug('update with timeout fired');
             }, self.delay);
+
             this.netural = true;
             this.showSubmitButton.truthValue = false;
             GridGame1Service.resetFactContent();
