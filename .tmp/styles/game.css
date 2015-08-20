@@ -119,7 +119,7 @@ h1.title {
 #game-container-2 {
   position: relative;
   width: 400px;
-  height: 310px;
+  height: 304px;
   margin-left: 0px;
 }
 
@@ -138,8 +138,8 @@ h1.title {
   font-weight: bold;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003174}}
-.game-overlay.game3overlay {
-  height: 310px;
+.game-overlay.game-reduced-height-overlay {
+  height: 304px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003178}}
 .game-overlay .lower {
@@ -213,8 +213,8 @@ h1.title {
   box-sizing: border-box;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003252}}
-#game.game3 {
-  height: 310px;
+#game.game-reduced-height {
+  height: 304px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003256}}
 #game .grid-container {

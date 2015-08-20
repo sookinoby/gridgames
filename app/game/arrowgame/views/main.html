@@ -2,7 +2,7 @@
     <!-- heading -->
     <div  id="heading" class="row">
         <div class="col-sm-12" >
-            <div class="outer-game-box">
+            <div class="outer-game-box" ng-class="{'outer-game-box-challenge':ctrl.gameType == 2}">
                 <div class="inner-game-box" >
                     <div class="strategy-title">
                          <span ng-bind-html=" (ctrl.titleOfStrategy | titleHighlighter )"></span>
@@ -15,9 +15,9 @@
                         <button type="button" class="btn btn-info" ng-click='ctrl.game.changeStats()' ng-show="ctrl.game.stats">Score Off</button>
                         <button type="button" class="btn btn-info" ng-click='ctrl.game.changeStats()' ng-show="!ctrl.game.stats">Score On</button>
 
-                        <button type="button" class="btn btn-info"  ng-show='ctrl.game.showSubmitButton.truthValue;' ng-click="ctrl.game.evaluateAnswer();" >Submit</button>
+                        <button type="button" class="btn btn-info small-button"  ng-disabled='!ctrl.game.showSubmitButton.truthValue;' ng-show="!ctrl.game.showNextButton.truthValue;" ng-click="ctrl.game.evaluateAnswer();" >Submit</button>
 
-                        <button  type="button" class="btn btn-info" ng-if='ctrl.game.showNextButton.truthValue;' ng-click="ctrl.game.showNextQuestions();" >Next </button>
+                        <button  type="button" class="btn btn-info small-button" ng-show='ctrl.game.showNextButton.truthValue;' ng-click="ctrl.game.showNextQuestions();" >Next </button>
 
                     </div>
                     <div class="col-xs-8" >
@@ -71,10 +71,9 @@
                                     </span>  
                             </span>
                             </span>
-                             <br />
-                             <br />
+                            <span class="spacer"></span>
                              <span ng-show="ctrl.gameType == 2"> Timer <br />
-                                <timer countdown="120" interval="1000" name="gameTimer" autoStart=false>{{countdown}}</timer> 
+                                <timer countdown="120" interval="1000" name="gameTimer" autoStart=false class="timer">{{countdown}} Sec.</timer> 
                              </span>  
                          
 
