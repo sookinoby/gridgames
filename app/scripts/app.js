@@ -16,7 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'gridGame3App',
+    'selectStratergyGameApp',
     'arrowGame' //,'gridGame3App'
     
   ])
