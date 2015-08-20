@@ -168,7 +168,7 @@ h1.title {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003209}}
 .text-color-red {
-  color: #E0420D;
+  color: #FF0000;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003213}}
@@ -183,7 +183,7 @@ h1.title {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003221}}
 .background-color-red {
-  background-color: rgba(224, 66, 13, 0.8);
+  background-color: rgba(255, 0, 0, 0.8);
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003227}}
@@ -363,7 +363,7 @@ h1.title {
 #game .tile-container .tile.wrong-answer .tile-inner {
   background: white;
   font-size: 1.4em;
-  color: #E0420D;
+  color: #FF0000;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/alexaravind\/Desktop\/angular\/road2math\/app\/styles\/game\.scss}line{font-family:\00003351}}
 #game .tile-container .tile.tile-right-not-selected .tile-inner {

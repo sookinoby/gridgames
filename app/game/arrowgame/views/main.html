@@ -29,7 +29,7 @@
                         <div id="game-over" ng-if="ctrl.game.gameOver" class="row game-overlay">
                             <h3>  Sorry , play again.
                             <div class="lower">
-                                <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                                <button type="button" class="btn btn-info" ng-click="ctrl.newGame();">Try Again</button>
                             </div>
                             </h3>
                         </div>
@@ -37,7 +37,7 @@
                         <div id="win" ng-if="ctrl.game.win" class="row game-overlay">
                             You win!
                             <div class="lower">
-                                <a class="retry-button" ng-click='ctrl.newGame()'>Try again</a>
+                                <button type="button" class="btn btn-info" ng-click="ctrl.newGame();">Try Again</button>
                             </div>
                         </div>
                         <!-- end of win overlay -->
