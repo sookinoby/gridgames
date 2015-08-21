@@ -13,6 +13,6 @@
           return deferred.promise;
       }
   };
-angular.module('gridGameThreeGameData',[]).service('gameDataService',gameDataService);
+angular.module('selectStrategyGameData',[]).service('gameDataService',gameDataService);
 
 }());
