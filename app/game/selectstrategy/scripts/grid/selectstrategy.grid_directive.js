@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gridGameThreeGrid')
+angular.module('selectStrategyGrid')
 .directive('grid', function() {
   return {
     restrict: 'A',

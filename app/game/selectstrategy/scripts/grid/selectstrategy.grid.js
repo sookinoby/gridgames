@@ -1,5 +1,5 @@
 'use strict';
-angular.module('gridGameThreeGrid', ['gridGameThreeGameData']).factory('GenerateUniqueId', function(gameDataService) {
+angular.module('selectStrategyGrid', ['gridGameThreeGameData']).factory('GenerateUniqueId', function(gameDataService) {
     this.dataFromFile = gameDataService.getGameData("3");
     // http://stackoverflow.com/questions/12223529/create-globally-unique-id-in-javascript
     var generateUid = function(separator) {

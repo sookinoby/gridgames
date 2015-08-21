@@ -5,10 +5,10 @@
 
 angular
 .module('selectStratergyGameApp', ['selectStrategyGameLogic', 'ngAnimate', 'ngCookies','timer','ngDropdowns','gridGameThreeGameData','ngRoute'])
-.controller('selectStrategyGameController', function(GameManager, KeyboardService,$scope,gameDataService,$routeParams) {
+.controller('selectStrategyGameController', function(SelectStratergyGameManager, KeyboardService,$scope,gameDataService,$routeParams) {
   this.gameType = 3;
 //  console.log("The type is" + this.gameType);
-  this.game = GameManager;
+  this.game = SelectStratergyGameManager;
   this.gameData = null;
   this.timerToggleButton = false;
   KeyboardService.destroy();
