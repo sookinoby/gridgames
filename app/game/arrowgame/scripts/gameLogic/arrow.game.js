@@ -1,11 +1,11 @@
 (function() {
     'use strict';
-    angular.module('arrowGameLogic', ['arrowGameGrid']).service('arrowGameManager', function($q, $timeout, GridGame1Service, $log) {
+    angular.module('arrowGameLogic', ['arrowGameGrid']).service('arrowGameManager', function($q, $timeout, arrowGameService, $log) {
         this.delay = 5000;
         this.delayedTriggerHolder = null;
         this.positionToInsert = {};
-        this.grid = GridGame1Service.grid;
-        this.tiles = GridGame1Service.tiles;
+        this.grid = arrowGameService.grid;
+        this.tiles = arrowGameService.tiles;
         this.gameOver = false;
         this.showNextButton = {};
         this.showSubmitButton = {}
@@ -17,8 +17,8 @@
         this.netural = true;
         
         this.passButton = function() {
-            GridGame1Service.passSubmitButton(this.showSubmitButton);
-            GridGame1Service.passNextButton(this.showNextButton);
+            arrowGameService.passSubmitButton(this.showSubmitButton);
+            arrowGameService.passNextButton(this.showNextButton);
         };
         this.passButton();
         this.indexOf = function(needle) {
@@ -62,35 +62,35 @@
             {
                 $timeout.cancel(self.delayedTriggerHolder);
             }
-            GridGame1Service.deleteCurrentBoard();
-            GridGame1Service.buildDataForGame(gameData, nameOfStrategy);
-            GridGame1Service.buildEmptyGameBoard();
+            arrowGameService.deleteCurrentBoard();
+            arrowGameService.buildDataForGame(gameData, nameOfStrategy);
+            arrowGameService.buildEmptyGameBoard();
             self.delayedTriggerHolder = $timeout(function tobuilstartinPosition() {
-                self.positionToInsert = GridGame1Service.buildStartingPosition();
+                self.positionToInsert = arrowGameService.buildStartingPosition();
                 $log.debug('update with timeout fired');
             }, self.delay);
 
             this.netural = true;
             this.showSubmitButton.truthValue = false;
-            GridGame1Service.resetFactContent();
-            this.factContent = GridGame1Service.getFactContent();
+            arrowGameService.resetFactContent();
+            this.factContent = arrowGameService.getFactContent();
             this.reinit();
         };
         this.showNextQuestions = function() {
             this.enterKeyCount = 0;
-            GridGame1Service.resetFactContent();
-            this.factContent = GridGame1Service.getFactContent();
-            GridGame1Service.deleteCurrentBoard();
-            this.positionToInsert = GridGame1Service.buildStartingPosition(this.positionToInsert);
+            arrowGameService.resetFactContent();
+            this.factContent = arrowGameService.getFactContent();
+            arrowGameService.deleteCurrentBoard();
+            this.positionToInsert = arrowGameService.buildStartingPosition(this.positionToInsert);
             this.showNextButton.truthValue = false;
             this.netural = true;
             this.rightAnswer = false;
         }
         this.evaluateAnswer = function() {
-            var points_for_questions = GridGame1Service.evaluateAnswer();
+            var points_for_questions = arrowGameService.evaluateAnswer();
             if (points_for_questions != null && points_for_questions > 0) {
                 this.updateScore(this.currentScore + points_for_questions);
-                this.factContent = GridGame1Service.getFactContent();
+                this.factContent = arrowGameService.getFactContent();
                 this.rightAnswer = true;
                 this.netural = false;
                 this.counter++;
@@ -130,7 +130,7 @@
                     return false;
                 }
                 if (key == "enter") {
-                    if (GridGame1Service.getLineNumber() == 0) 
+                    if (arrowGameService.getLineNumber() == 0) 
                     {
                       self.enterKeyCount = 0;
                       return;
@@ -144,11 +144,11 @@
                 } else {
                     if (self.enterKeyCount == 0) {
                      
-                        if (GridGame1Service.checkIfKeyPressAllowed(key)) {
+                        if (arrowGameService.checkIfKeyPressAllowed(key)) {
                             //   self.showSubmitButton.truthValue = true;
-                            GridGame1Service.storeAnswerAndSelectTileForProcessing(key);
-                            // var result = GridGame1Service.checkIfAnswerIsValid(key);
-                            self.factContent = GridGame1Service.getFactContent();
+                            arrowGameService.storeAnswerAndSelectTileForProcessing(key);
+                            // var result = arrowGameService.checkIfAnswerIsValid(key);
+                            self.factContent = arrowGameService.getFactContent();
                         } else {
                             // this means the key was duplicate.
                         }

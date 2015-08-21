@@ -63,7 +63,7 @@
             };
         };
         return Tile;
-    }).provider('GridGame1Service', function() {
+    }).provider('arrowGameService', function() {
         this.size = 4; // Default size
         //  this.startingTiles = 1; // default starting tiles
         this.currentQuestionCells;
