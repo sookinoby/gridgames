@@ -646,6 +646,7 @@ angular.module('gridGameThreeGrid', ['gridGameThreeGameData']).factory('Generate
     }
     /* evaluate the selected answers */
     this.evaluateAnswer = function() {
+        var isAnswerCorrect = true;
         for (var i = 0; i < this.storeSelectedPositions.length; i++) {
             // console.log(this.storeSelectedPositions);
             var vector = this._positionToCoordinates(this.storeSelectedPositions[i]);
@@ -668,6 +669,7 @@ angular.module('gridGameThreeGrid', ['gridGameThreeGameData']).factory('Generate
                     right_answer.setChangeColor();
                     //  alert(result);
                 }
+                isAnswerCorrect = false;
             } else if (result) {
                 points_for_questions = points_for_questions + 1;
                 // console.log("correct answer");
@@ -678,7 +680,14 @@ angular.module('gridGameThreeGrid', ['gridGameThreeGameData']).factory('Generate
         }
         console.log(points_for_questions);
         this.factContentColorChange();
-        return points_for_questions;
+        if(isAnswerCorrect === true){
+             console.log("returning score");
+            return points_for_questions;
+        }
+        else {
+            console.log("returning zero");
+            return 0;
+        }
     };
     this.toShowSubmitButton = function(submit) {
         this.showSubmitButton = submit;

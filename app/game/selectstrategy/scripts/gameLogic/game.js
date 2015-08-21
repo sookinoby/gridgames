@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', 'ngCookies'])
-.service('GameManager', function($q, $timeout, GridService, KeyboardService, $cookieStore) {
+.service('GameManager', function($q, $timeout, GridService, KeyboardService, $cookieStore,$log) {
 
   this.getHighScore = function() {
     return parseInt($cookieStore.get('highScore')) || 0;
   };
   this.delay = 5000;
-    
+  this.delayedTriggerHolder = null;  
   this.grid = GridService.grid;
   this.tiles = GridService.tiles;
     
@@ -118,18 +118,24 @@ angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', '
   this.reinit();
 
   this.newGame = function(gameData,nameOfStrategy) {
-    
- 
+    var self = this;
+    if(self.delayedTriggerHolder)
+    {
+      $timeout.cancel(self.delayedTriggerHolder);
+    }
+  
     this.questionToDisplay = {};
     GridService.resetFactContent();
     GridService.deleteCurrentBoard();
     GridService.toShowQuestion(this.questionToDisplay);
     GridService.buildDataForGame(gameData,nameOfStrategy);
     GridService.buildEmptyGameBoard();
-    $timeout(function() {
-     GridService.buildStartingPosition();
-        console.log('update with timeout fired');
-    }, self.delay);     
+  
+    self.delayedTriggerHolder = $timeout(function tobuilstartinPosition() {
+    self.positionToInsert = GridService.buildStartingPosition();
+    $log.debug('update with timeout fired');
+    }, self.delay);
+
     this.factContent =  GridService.getFactContent();
     this.reinit();
   };

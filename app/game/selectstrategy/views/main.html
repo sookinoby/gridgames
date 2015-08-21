@@ -48,16 +48,14 @@
                         </div> <!-- game-container -->
                         </div> <!-- end of col-sm-8 -->
                         <div class="col-xs-2 game-side-bar" >    
-                        <span ng-show="ctrl.game.stats">
-                            <span>
+                            
+                             <span ng-show="ctrl.game.stats"> Total Questions <br />
+                              {{ctrl.game.totalfacts}}
+                             </span> 
+                            <span  ng-show="ctrl.game.stats">
                             Score <br /> 
                                      {{ctrl.game.currentScore}}
                             </span>
-                            </span>   
-
-                             <span ng-show="ctrl.game.stats"> Total Questions <br />
-                              {{ctrl.game.totalfacts}}
-                             </span>  
 
                             <span class="spacer" ng-show="ctrl.game.stats">
                             </span>
@@ -90,12 +88,3 @@
             dropdown-item-label="text" style="margin-left:0px;border-style: solid; border-width: 5px;"  >
             </div>
           </div>
-
-
-
-
-
-
-
-
-
