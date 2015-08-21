@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('selectStrategyGameLogic', ['selectStrategyGrid', 'gridGameThreeKeyboard', 'ngCookies'])
-.service('SelectStratergyGameManager', function($q, $timeout, SelectStrategyGridService, KeyboardService, $cookieStore,$log) {
+angular.module('selectStrategyGameLogic', ['selectStrategyGrid', 'ngCookies'])
+.service('SelectStratergyGameManager', function($q, $timeout, SelectStrategyGridService, $cookieStore,$log) {
 
   this.getHighScore = function() {
     return parseInt($cookieStore.get('highScore')) || 0;

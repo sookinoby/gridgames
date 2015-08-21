@@ -1,5 +1,5 @@
 'use strict';
-angular.module('gridGameThreeKeyboard', []).service('KeyboardService', function($q, $document) {
+angular.module('selectStrategyKeyboard', []).service('KeyboardService', function($q, $document) {
     var UP = 'up',
         RIGHT = 'right',
         DOWN = 'down',

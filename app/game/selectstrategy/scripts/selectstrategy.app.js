@@ -4,7 +4,7 @@
  {
 
 angular
-.module('selectStratergyGameApp', ['selectStrategyGameLogic', 'ngAnimate', 'ngCookies','timer','ngDropdowns','selectStrategyGameData','ngRoute'])
+.module('selectStratergyGameApp', ['selectStrategyGameLogic', 'ngAnimate', 'ngCookies','timer','ngDropdowns','selectStrategyGameData','ngRoute','selectStrategyKeyboard'])
 .controller('selectStrategyGameController', function(SelectStratergyGameManager, KeyboardService,$scope,gameDataService,$routeParams) {
   this.gameType = 3;
 //  console.log("The type is" + this.gameType);
