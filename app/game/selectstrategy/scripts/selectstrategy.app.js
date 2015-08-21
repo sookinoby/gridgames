@@ -1,8 +1,6 @@
 'use strict';
 
-(function()
- {
-
+(function(){
 angular
 .module('selectStratergyGameApp', ['selectStrategyGameLogic', 'ngAnimate', 'ngCookies','timer','ngDropdowns','selectStrategyGameData','ngRoute','selectStrategyKeyboard'])
 .controller('selectStrategyGameController', function(SelectStratergyGameManager, KeyboardService,$scope,gameDataService,$routeParams) {

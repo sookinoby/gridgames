@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 angular.module('arrowKeyboard', []).service('ArrowGameKeyboardService', function($q, $document) {
     var UP = 'up',
@@ -45,3 +46,4 @@ angular.module('arrowKeyboard', []).service('ArrowGameKeyboardService', function
         }
     };
 });
+})();

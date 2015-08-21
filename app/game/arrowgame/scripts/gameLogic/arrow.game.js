@@ -161,4 +161,4 @@
             this.currentScore = newScore;
         };
     });
-}());
+})();

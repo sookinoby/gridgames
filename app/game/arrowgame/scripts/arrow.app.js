@@ -1,5 +1,5 @@
-'use strict';
 (function() {
+    'use strict';
     angular.module('arrowGame', ['arrowGameLogic', 'ngAnimate', 'ngCookies', 'timer', 'ngDropdowns', 'arrowGameCommonService', 'arrowKeyboard']).controller('arrowGameController', function(arrowGameManager, ArrowGameKeyboardService, $scope, arrowGameDataService, $routeParams) {
         if ($routeParams.type == 2) {
             this.gameType = 2;

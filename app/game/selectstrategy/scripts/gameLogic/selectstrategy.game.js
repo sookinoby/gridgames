@@ -1,5 +1,5 @@
+(function(){
 'use strict';
-
 angular.module('selectStrategyGameLogic', ['selectStrategyGrid'])
 .service('SelectStratergyGameManager', function($q, $timeout, SelectStrategyGridService,$log) {
 
@@ -209,3 +209,4 @@ angular.module('selectStrategyGameLogic', ['selectStrategyGrid'])
   };
 
 });
+})();

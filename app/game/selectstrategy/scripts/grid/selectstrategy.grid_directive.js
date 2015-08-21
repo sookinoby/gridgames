@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 
 angular.module('selectStrategyGrid')
@@ -16,3 +17,4 @@ angular.module('selectStrategyGrid')
     }
   };
 });
+})();

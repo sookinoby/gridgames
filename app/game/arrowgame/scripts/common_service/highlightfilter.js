@@ -1,4 +1,5 @@
 // Setup the filter
+(function(){
 angular.module('arrowGameCommonService').filter('titleHighlighter', function() {
 
   // Create the return function
@@ -18,3 +19,4 @@ angular.module('arrowGameCommonService').filter('titleHighlighter', function() {
     } 
   }
 );
+})();

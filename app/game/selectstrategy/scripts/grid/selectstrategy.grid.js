@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 angular.module('selectStrategyGrid', ['selectStrategyGameData']).factory('TileModel', function() {
     var Tile = function(pos, val, answer) {
@@ -695,3 +696,4 @@ angular.module('selectStrategyGrid', ['selectStrategyGameData']).factory('TileMo
     };
     return this;
 });
+})();

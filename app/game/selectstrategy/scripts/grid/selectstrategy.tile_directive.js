@@ -1,5 +1,5 @@
+(function(){
 'use strict';
-
 angular.module('selectStrategyGrid')
 .directive('tileSelectStrategy', function(SelectStrategyGridService) {
   return {
@@ -14,3 +14,4 @@ angular.module('selectStrategyGrid')
     }
   };
 });
+})();
