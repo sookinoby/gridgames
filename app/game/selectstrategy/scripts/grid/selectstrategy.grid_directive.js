@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('selectStrategyGrid')
-.directive('grid', function() {
+.directive('gridSelectStrategy', function() {
   return {
     restrict: 'A',
     require: 'ngModel',
