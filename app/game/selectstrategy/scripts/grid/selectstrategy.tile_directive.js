@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('selectStrategyGrid')
-.directive('tile', function(SelectStrategyGridService) {
+.directive('tileSelectStrategy', function(SelectStrategyGridService) {
   return {
     restrict: 'A',
     scope: {
