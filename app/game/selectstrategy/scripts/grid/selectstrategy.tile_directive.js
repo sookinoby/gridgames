@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gridGameThreeGrid')
-.directive('tile', function(GridService) {
+.directive('tile', function(SelectStrategyGridService) {
   return {
     restrict: 'A',
     scope: {
@@ -10,7 +10,7 @@ angular.module('gridGameThreeGrid')
     templateUrl: 'game/selectstrategy/scripts/grid/selectstrategy.tile.html',
     link: function(scope) {
       // Cell generation
-      scope.storeAnswer = GridService.storeAnswer;
+      scope.storeAnswer = SelectStrategyGridService.storeAnswer;
     }
   };
 });

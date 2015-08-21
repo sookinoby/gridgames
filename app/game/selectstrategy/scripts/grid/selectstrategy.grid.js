@@ -73,7 +73,7 @@ angular.module('gridGameThreeGrid', ['gridGameThreeGameData']).factory('Generate
         };
     };
     return Tile;
-}).service('GridService', function(TileModel, gameDataService) {
+}).service('SelectStrategyGridService', function(TileModel, gameDataService) {
     var promise = gameDataService.getGameData("3");
     this.dataFromFile = null;
     this.linenumber = 0;

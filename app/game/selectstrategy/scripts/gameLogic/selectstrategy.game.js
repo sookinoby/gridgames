@@ -1,17 +1,17 @@
 'use strict';
 
 angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', 'ngCookies'])
-.service('GameManager', function($q, $timeout, GridService, KeyboardService, $cookieStore,$log) {
+.service('GameManager', function($q, $timeout, SelectStrategyGridService, KeyboardService, $cookieStore,$log) {
 
   this.getHighScore = function() {
     return parseInt($cookieStore.get('highScore')) || 0;
   };
   this.delay = 5000;
   this.delayedTriggerHolder = null;  
-  this.grid = GridService.grid;
-  this.tiles = GridService.tiles;
+  this.grid = SelectStrategyGridService.grid;
+  this.tiles = SelectStrategyGridService.tiles;
     
-  this.storeAnswer = GridService.storeAnswer;
+  this.storeAnswer = SelectStrategyGridService.storeAnswer;
   //this.winningValue = 2048;
   this.stats = true;
   this.showNextButton = {};
@@ -54,29 +54,29 @@ angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', '
 /*    
   this.isAnswerSelected = function()
   {
-      console.log(GridService.isAnswerSelected());
-      return GridService.isAnswerSelected();
+      console.log(SelectStrategyGridService.isAnswerSelected());
+      return SelectStrategyGridService.isAnswerSelected();
   };
 */    
   this.passButton = function()
   {
-      GridService.toShowSubmitButton(this.showSubmitButton);
-      GridService.toShowNextButton(this.showNextButton);
+      SelectStrategyGridService.toShowSubmitButton(this.showSubmitButton);
+      SelectStrategyGridService.toShowNextButton(this.showNextButton);
   };
   
   this.passButton();
     
   this.evaluateAnswer = function()
   {
-     var score = GridService.evaluateAnswer();
+     var score = SelectStrategyGridService.evaluateAnswer();
      this.showSubmitButton.truthValue = false;
       this.showNextButton.truthValue = true;  
       if(score > 0)
       {
         this.rightAnswer = true;  
         this.netural  = false;
-//     GridService.deleteCurrentBoard();
-  //   GridService.buildStartingPosition();
+//     SelectStrategyGridService.deleteCurrentBoard();
+  //   SelectStrategyGridService.buildStartingPosition();
      this.updateScore(score);
       }
       else
@@ -90,10 +90,10 @@ angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', '
   {
     
       this.totalfacts =  this.totalfacts + 1;
-      GridService.deleteCurrentBoard();
-      GridService.buildStartingPosition();
-      GridService.resetFactContent();
-      this.factContent = GridService.getFactContent();
+      SelectStrategyGridService.deleteCurrentBoard();
+      SelectStrategyGridService.buildStartingPosition();
+      SelectStrategyGridService.resetFactContent();
+      this.factContent = SelectStrategyGridService.getFactContent();
       this.rightAnswer = false;
       this.netural  = true;
       this.showNextButton.truthValue = false;
@@ -125,18 +125,18 @@ angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', '
     }
   
     this.questionToDisplay = {};
-    GridService.resetFactContent();
-    GridService.deleteCurrentBoard();
-    GridService.toShowQuestion(this.questionToDisplay);
-    GridService.buildDataForGame(gameData,nameOfStrategy);
-    GridService.buildEmptyGameBoard();
+    SelectStrategyGridService.resetFactContent();
+    SelectStrategyGridService.deleteCurrentBoard();
+    SelectStrategyGridService.toShowQuestion(this.questionToDisplay);
+    SelectStrategyGridService.buildDataForGame(gameData,nameOfStrategy);
+    SelectStrategyGridService.buildEmptyGameBoard();
   
     self.delayedTriggerHolder = $timeout(function tobuilstartinPosition() {
-    self.positionToInsert = GridService.buildStartingPosition();
+    self.positionToInsert = SelectStrategyGridService.buildStartingPosition();
     $log.debug('update with timeout fired');
     }, self.delay);
 
-    this.factContent =  GridService.getFactContent();
+    this.factContent =  SelectStrategyGridService.getFactContent();
     this.reinit();
   };
     
@@ -176,7 +176,7 @@ angular.module('gridGameThree', ['gridGameThreeGrid', 'gridGameThreeKeyboard', '
       if(key == "enter")
       {
         self.enterCount++;
-        if(GridService.isAnswerSelected() == true)
+        if(SelectStrategyGridService.isAnswerSelected() == true)
         {
               if(self.enterCount == 1)
               {
