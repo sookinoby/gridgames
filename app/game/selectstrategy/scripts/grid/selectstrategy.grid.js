@@ -1,26 +1,10 @@
 'use strict';
-angular.module('selectStrategyGrid', ['selectStrategyGameData']).factory('GenerateUniqueId', function(gameDataService) {
-    this.dataFromFile = gameDataService.getGameData("3");
-    // http://stackoverflow.com/questions/12223529/create-globally-unique-id-in-javascript
-    var generateUid = function(separator) {
-        var delim = separator || '-';
-
-        function S4() {
-            return (((1 + Math.random()) * 0x10000) || 0).toString(16).substring(1);
-        }
-        return (S4() + S4() + delim + S4() + delim + S4() + delim + S4() + delim + S4() + S4() + S4());
-    };
-    return {
-        next: function() {
-            return generateUid();
-        }
-    };
-}).factory('TileModel', function(GenerateUniqueId) {
+angular.module('selectStrategyGrid', ['selectStrategyGameData']).factory('TileModel', function() {
     var Tile = function(pos, val, answer) {
         this.x = pos.x;
         this.y = pos.y;
         this.value = val || 2;
-        this.id = GenerateUniqueId.next();
+       // this.id = GenerateUniqueId.next();
         this.merged = null;
         this.selected = false;
         this.answer = answer;
@@ -34,13 +18,11 @@ angular.module('selectStrategyGrid', ['selectStrategyGameData']).factory('Genera
         this.selected = !this.selected;
     };
     Tile.prototype.setChangeColor = function() {
-        this.
-        default = false;
+        this.default = false;
         this.changeColor = true;
     };
     Tile.prototype.resetChangeColor = function() {
-        this.
-        default = true;
+        this.default = true;
         this.changeColor = false;
     };
     Tile.prototype.setSelected = function() {
