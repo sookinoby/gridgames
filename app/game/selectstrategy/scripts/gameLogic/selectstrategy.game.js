@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('selectStrategyGameLogic', ['selectStrategyGrid', 'ngCookies'])
-.service('SelectStratergyGameManager', function($q, $timeout, SelectStrategyGridService, $cookieStore,$log) {
+angular.module('selectStrategyGameLogic', ['selectStrategyGrid'])
+.service('SelectStratergyGameManager', function($q, $timeout, SelectStrategyGridService,$log) {
 
   this.getHighScore = function() {
-    return parseInt($cookieStore.get('highScore')) || 0;
+    return  0;
   };
   this.delay = 5000;
   this.delayedTriggerHolder = null;  
@@ -205,7 +205,6 @@ angular.module('selectStrategyGameLogic', ['selectStrategyGrid', 'ngCookies'])
     this.currentScore = this.currentScore + newScore;
     if(this.currentScore > this.getHighScore()) {
       this.highScore = this.currentScore + newScore;
-      $cookieStore.put('highScore', newScore);
     }
   };
 
